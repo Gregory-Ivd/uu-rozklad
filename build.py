@@ -88,6 +88,14 @@ def main() -> None:
         "/*__DATA__*/null", json.dumps(data, ensure_ascii=False)
     )
     OUT.write_text(html, encoding="utf-8")
+    # GitHub Pages віддає index.html як є — йому потрібен повний документ із кодуванням.
+    # rozklad.html лишається фрагментом для артефакту claude.ai (той сам додає каркас).
+    (HERE / "index.html").write_text(
+        '<!doctype html>\n<html lang="uk">\n<head>\n<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        "</head>\n<body>\n" + html + "\n</body>\n</html>\n",
+        encoding="utf-8",
+    )
     print(f"{OUT.name}: {len(lessons)} пар у сітці, курсів з посиланням {sum(1 for l in lessons if l['course'])}")
 
 
