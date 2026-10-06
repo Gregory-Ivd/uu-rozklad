@@ -6,57 +6,92 @@
 </head>
 <body>
 <title>Мій розклад у Moodle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500&family=Roboto+Condensed&display=swap">
 <style>
-/* Layout: кадр Moodle 3.8 Boost (навбар + заголовок сторінки + блоки), у центрі — новий блок «Мій розклад»; праворуч — «Було / Стало». */
+/* Тема vo.uu.edu.ua (Moodle 3.8, тема університету — не Boost). Значення зняті з
+   https://vo.uu.edu.ua/my/ 06.10.2026: бірюзова смуга, жовта шапка, біле меню з синьою
+   лінією, блоки з сірим заголовком і пунктирною рамкою. Оригінал лише світлий —
+   прототип теж свідомо однотемний. */
 :root {
-  --bg: #f2f4f7;
+  color-scheme: light;
+  --bg: #f4f4f2;
   --surface: #ffffff;
-  --line: #dee2e6;
-  --fg: #1d2125;
-  --muted: #5d6874;
-  --accent: #0f6cbf;
-  --accent-soft: #e7f0fa;
-  --now: #0b7a53;
-  --now-soft: #e3f4ec;
-  --warn: #9a5b00;
-  --warn-soft: #fff4dc;
+  --sunk: #eeeeee;
+  --line: #d6d6d6;
+  --dots: #59585d;
+  --fg: #333333;
+  --muted: #6b7378;
+  --heading: #3a454b;
+  --link: #51666c;
+  --accent: #0435cd;
+  --accent-soft: #e6ecfc;
+  --topbar: #28bafa;
+  --banner: #fffcbc;
+  --banner-deep: #fde23f;
+  --btn: #51666c;
+  --btn-green: #4caf50;
+  --event: #ffd3bd;
+  --now: #2e7d32;
+  --now-soft: #e5f3e6;
+  --warn: #8a5a00;
+  --warn-soft: #fff1c9;
+  --bad: #c62828;
+  --bad-soft: #fde4e1;
   --yellow: #f2c200;
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #15191e; --surface: #1e242b; --line: #333c46; --fg: #e6e9ec; --muted: #9aa5b1;
-    --accent: #6cb1ff; --accent-soft: #1d3149; --now: #4fd1a0; --now-soft: #173a2e;
-    --warn: #f0b860; --warn-soft: #3a2e17; --yellow: #d9ae00; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #15191e; --surface: #1e242b; --line: #333c46; --fg: #e6e9ec; --muted: #9aa5b1;
-  --accent: #6cb1ff; --accent-soft: #1d3149; --now: #4fd1a0; --now-soft: #173a2e;
-  --warn: #f0b860; --warn-soft: #3a2e17; --yellow: #d9ae00; color-scheme: dark;
+  --yellow-soft: #fff6c4;
+  --font: "Open Sans", "Segoe UI", Arial, sans-serif;
+  --font-head: "Roboto", "Segoe UI", Arial, sans-serif;
+  --font-brand: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+  --mono: Consolas, "Liberation Mono", monospace;
 }
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--font); }
-a { color: var(--accent); }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+body { background: var(--bg); color: var(--fg); font: 14.4px/1.5 var(--font); margin: 0; }
+a { color: var(--link); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ic { width: 1em; height: 1em; vertical-align: -0.125em; fill: currentColor; flex: none; }
 
-.navbar { background: var(--surface); border-bottom: 1px solid var(--line); padding: 10px 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.brand { font-weight: 700; letter-spacing: .02em; }
-.crumbs { color: var(--muted); font-size: 13px; }
-.navbar .user { margin-left: auto; color: var(--muted); font-size: 13px; }
+/* Бірюзова смуга */
+.topbar { background: var(--topbar); color: #fff; font-size: 14px; display: flex; justify-content: flex-end; align-items: center; gap: 18px; padding-inline: 16px; padding-block: 5px; flex-wrap: wrap; }
+.topbar .avatar { width: 22px; height: 22px; border-radius: 50%; background: #e9eef1; display: inline-block; vertical-align: middle; margin-left: 6px; }
+.topbar .status { display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #cfd8dc; display: inline-block; }
+.dot.live { background: #b9f6ca; box-shadow: 0 0 0 2px rgba(255,255,255,.35); }
 
-.page { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 40px; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; align-items: start; }
+/* Жовта шапка */
+.banner { background: linear-gradient(100deg, var(--banner-deep) 0%, var(--banner) 55%, #fff7a8 80%, var(--banner-deep) 100%); padding-inline: 32px; padding-block: 22px; }
+.banner h1 { margin: 0; color: var(--accent); font: 400 clamp(24px, 4.2vw, 48px)/1.15 var(--font-brand); text-wrap: balance; }
+
+/* Біле меню з синьою лінією */
+.menubar { background: var(--surface); border-bottom: 3px solid var(--accent); display: flex; flex-wrap: wrap; align-items: center; gap: 4px 30px; padding-inline: 28px; padding-block: 10px; }
+.menubar a, .menubar button { color: #222; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; font-size: 14px; background: none; border: 0; padding: 4px 0; cursor: pointer; }
+.menubar a:hover, .menubar button:hover { color: var(--accent); }
+.menubar [aria-current="page"], .menubar [aria-pressed="true"] { color: var(--accent); font-weight: 600; box-shadow: inset 0 -2px 0 var(--accent); }
+.menubar .spacer { margin-left: auto; }
+.btn-green { background: var(--btn-green); color: #fff; border: 0; border-radius: 3px; padding: 6px 10px; font-size: 14px; }
+
+/* Блоки Moodle */
+.block, .card { background: var(--surface); min-width: 0; margin: 0; }
+.block > h2, .card > h2 { margin: 0; background: var(--sunk); border: 1px dotted var(--dots); border-bottom: 0; padding: 5px 8px; font: 400 22px/1.3 var(--font-head); color: var(--heading); display: flex; align-items: center; gap: 8px; }
+.block-body, .card-body { border: 1px dotted var(--dots); margin-left: 5px; padding: 10px 8px; background: var(--surface); }
+.btn { border: 0; background: var(--btn); color: #fff; border-radius: 5px; padding: 6px 12px; cursor: pointer; font-size: 14px; }
+.btn.primary { background: var(--btn-green); }
+.btn.danger { background: var(--bad); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+select, input[type="text"] { background: var(--surface); border: 1px solid #ced4da; border-radius: 3px; padding: 5px 8px; min-width: 0; }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+.footer { text-align: center; font-size: 12px; color: var(--muted); padding-block: 24px; }
+/* «≡» перед заголовком блоку, як у «Огляд курсу» */
+.block > h2::before, .card > h2::before { content: ""; width: 17px; height: 14px; flex: none; background:
+  linear-gradient(currentColor 0 0) top / 100% 3px no-repeat,
+  linear-gradient(currentColor 0 0) center / 100% 3px no-repeat,
+  linear-gradient(currentColor 0 0) bottom / 100% 3px no-repeat; }
+
+/* Layout: кадр vo.uu.edu.ua — смуга, шапка, меню; ліворуч новий блок «Мій розклад», праворуч колонка блоків. */
+.page { margin: 0; padding-inline: 16px; padding-block: 14px 24px; display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 15px; align-items: start; }
 @media (max-width: 900px) { .page { grid-template-columns: minmax(0, 1fr); } }
-
-.header { grid-column: 1 / -1; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 16px 20px; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; }
-.header h1 { margin: 0; font-size: 24px; font-weight: 500; text-wrap: balance; }
-.header .pill { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; background: var(--warn-soft); color: var(--warn); padding: 2px 8px; border-radius: 3px; }
-
-.block { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; min-width: 0; }
-.block > h2 { margin: 0; padding: 14px 20px 0; font-size: 18px; font-weight: 500; }
-.block-body { padding: 12px 20px 20px; }
-
+.proto { grid-column: 1 / -1; font-size: 13px; background: var(--warn-soft); color: var(--warn); border: 1px dotted var(--dots); padding: 6px 10px; }
 .weekline { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; color: var(--muted); font-size: 14px; }
 .weekchip { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--fg); }
 .weekchip i { width: 12px; height: 12px; border-radius: 2px; border: 1px solid var(--line); display: inline-block; }
@@ -97,17 +132,34 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 @media (prefers-reduced-motion: no-preference) { .tabs button { transition: color .15s, border-color .15s; } }
 </style>
 
-<nav class="navbar">
-  <span class="brand">Університет «Україна» · Moodle</span>
-  <span class="crumbs">Інформаційна панель</span>
-  <span class="user" id="who"></span>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3z"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 4A10 10 0 0 0 2 14c0 2 .6 3.9 1.6 5.4h16.8A10 10 0 0 0 12 4zm1 10.7a2 2 0 1 1-2-3.4l5-4z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3zM5 9v10h14V9zm2 2h3v3H7zm4 0h3v3h-3zm4 0h2v3h-2z"/></symbol>
+  <symbol id="i-case" viewBox="0 0 24 24"><path d="M9 3h6a2 2 0 0 1 2 2v2h4a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4V5a2 2 0 0 1 2-2zm0 4h6V5H9z"/></symbol>
+  <symbol id="i-bars" viewBox="0 0 24 24"><path d="M3 5h18v2.5H3zm0 5.75h18v2.5H3zM3 16.5h18V19H3z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M12 22a2.5 2.5 0 0 0 2.5-2.5h-5A2.5 2.5 0 0 0 12 22zm7-6v-5a7 7 0 0 0-5.5-6.8V3a1.5 1.5 0 0 0-3 0v1.2A7 7 0 0 0 5 11v5l-2 2v1h18v-1z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5 0-9 2.5-9 5.5V22h18v-2.5C21 16.5 17 14 12 14z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><path d="M3 3h18v18H3zm2 2v4h6V5zm8 0v4h6V5zM5 11v8h6v-8zm8 0v8h6v-8z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.6 4 2.4-1 1.7-5-3V6h2z"/></symbol>
+</svg>
+
+<div class="topbar">
+  <svg class="ic"><use href="#i-bell"></use></svg>
+  <span>Українська ‎(uk)‎</span>
+  <span id="who"></span>
+</div>
+<header class="banner"><h1>Відкритий міжнародний університет розвитку людини "Україна"</h1></header>
+<nav class="menubar">
+  <a href="#"><svg class="ic"><use href="#i-home"></use></svg>Головна</a>
+  <a href="#"><svg class="ic"><use href="#i-gauge"></use></svg>Мій кабінет</a>
+  <a href="#"><svg class="ic"><use href="#i-cal"></use></svg>Події</a>
+  <a href="#"><svg class="ic"><use href="#i-case"></use></svg>Мої курси</a>
+  <a href="#" aria-current="page"><svg class="ic"><use href="#i-clock"></use></svg>Розклад</a>
 </nav>
 
 <main class="page">
-  <header class="header">
-    <h1>Інформаційна панель</h1>
-    <span class="pill">Прототип блоку</span>
-  </header>
+  <p class="proto">Прототип: новий блок «Мій розклад» на сторінці «Мій кабінет». Решта сторінки — як у Moodle університету зараз.</p>
 
   <section class="block" aria-labelledby="h-rozklad">
     <h2 id="h-rozklad">Мій розклад</h2>

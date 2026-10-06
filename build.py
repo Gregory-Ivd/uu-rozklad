@@ -35,6 +35,15 @@ def _iso(value) -> str:
     return value.isoformat() if isinstance(value, date) else str(value)
 
 
+def themed(path: Path) -> str:
+    """Шаблон зі стилем vo.uu.edu.ua (theme.css) і набором іконок (icons.svg)."""
+    return (
+        path.read_text(encoding="utf-8")
+        .replace("/*__THEME__*/", (HERE / "theme.css").read_text(encoding="utf-8"))
+        .replace("<!--__ICONS__-->", (HERE / "icons.svg").read_text(encoding="utf-8"))
+    )
+
+
 def main() -> None:
     cfg = yaml.safe_load(SCHEDULE.read_text(encoding="utf-8"))
 
@@ -84,7 +93,7 @@ def main() -> None:
         "source": "1_курс_ІПЗ-26-1, КН-26-1 ЗІПЗ-26-1 Розклад.docx",
     }
 
-    html = TEMPLATE.read_text(encoding="utf-8").replace(
+    html = themed(TEMPLATE).replace(
         "/*__DATA__*/null", json.dumps(data, ensure_ascii=False)
     )
     OUT.write_text(html, encoding="utf-8")
@@ -125,7 +134,7 @@ def main() -> None:
         "changes": [],
     }
     (HERE / "seed.json").write_text(json.dumps(seed, ensure_ascii=False, indent=1), encoding="utf-8")
-    admin = (HERE / "admin_template.html").read_text(encoding="utf-8").replace(
+    admin = themed(HERE / "admin_template.html").replace(
         "/*__SEED__*/null", json.dumps(seed, ensure_ascii=False)
     )
     (HERE / "kabinet.html").write_text(admin, encoding="utf-8")
