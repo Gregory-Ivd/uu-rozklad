@@ -881,12 +881,13 @@ function render() {
     teacher: "Прототип. Сторінка викладача: свої пари в усіх групах, тема й Zoom, заявки на перенесення.",
     student: "Прототип. Блок «Мій розклад» у «Моєму кабінеті» студента — решта сторінки як у Moodle зараз.",
   }[state.mode];
-  $("who-top").textContent = { admin: "Методист (деканат)", teacher: state.teacher || "Викладач", student: "Студент " + groupName(state.studentGroup || "") }[state.mode];
   if (!state.config) {
     if (store.kind === "db") showBanner(state.canWrite ? "Розклад ще не налаштовано: немає даних про семестр і групи." : "Розклад ще не опубліковано.");
     return;
   }
   if (state.mode === "admin") renderAdmin(); else if (state.mode === "teacher") renderTeacher(); else renderStudent();
+  // Після рендера: викладача й групу за замовчуванням обирають самі render-функції.
+  $("who-top").textContent = { admin: "Методист (деканат)", teacher: state.teacher || "Викладач", student: "Студент " + groupName(state.studentGroup || "") }[state.mode];
 }
 let pending = false;
 function onData() {
