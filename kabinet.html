@@ -218,6 +218,7 @@ table.week { border-collapse: collapse; width: 100%; min-width: 760px; font-size
             <option value="2">тиждень №2 (жовтий)</option>
           </select></label>
           <span class="file-btn btn" id="import-btn">Імпорт з Word (.docx)<input type="file" id="import" accept=".docx"></span>
+          <button type="button" class="btn" id="reset-demo" hidden>Скинути демо</button>
         </div>
         <div class="scroll"><table class="week" id="grid"></table></div>
         <div class="legend">
@@ -477,6 +478,7 @@ function renderAdmin() {
   if (!state.group || !groups.some(g => g.id === state.group)) state.group = groups[0]?.id || null;
   gSel.value = state.group || "";
   $("import-btn").hidden = !state.canWrite;
+  $("reset-demo").hidden = store.kind !== "local";
 
   const { list, flagged } = problems();
   const ls = state.groups[state.group]?.lessons || [];
@@ -664,6 +666,13 @@ $("import").addEventListener("change", async e => {
     showBanner("Не вдалося прочитати файл: " + (err.message || "невідомий формат") + " Потрібен .docx з таблицею розкладу.");
   }
 });
+// Демо без спільного сховища: усе лежить у браузері глядача — повертаємо стартовий розклад.
+$("reset-demo").onclick = () => {
+  try { localStorage.removeItem("uu-rozklad-demo"); } catch (e) {}
+  store.load(); state.sel = null; state.editing = null; state.imported = null;
+  $("import-card").hidden = true; showBanner("Демо скинуто: розклад як на початку.");
+  render();
+};
 $("import-cancel").onclick = () => { state.imported = null; $("import-card").hidden = true; };
 $("import-apply").onclick = async () => {
   const ids = [...$("import-groups").querySelectorAll("input:checked")].map(i => i.value);
