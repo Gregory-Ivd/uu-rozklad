@@ -98,6 +98,45 @@ def main() -> None:
     )
     print(f"{OUT.name}: {len(lessons)} пар у сітці, курсів з посиланням {sum(1 for l in lessons if l['course'])}")
 
+    # Кабінет методиста. Офіційний документ один на три групи; у стартових даних
+    # заповнена лише ЗІПЗ-26-1 — дві інші методист заповнює імпортом docx на показі.
+    seed = {
+        "config": {
+            "semester": data["semester"],
+            "bells": data["bells"],
+            "weeks": data["weeks"],
+            "courses": courses,
+            "groups": [
+                {"id": "ZIPZ-26-1", "name": "ЗІПЗ-26-1"},
+                {"id": "IPZ-26-1", "name": "ІПЗ-26-1"},
+                {"id": "KN-26-1", "name": "КН-26-1"},
+            ],
+        },
+        "groups": {
+            "ZIPZ-26-1": {
+                "name": "ЗІПЗ-26-1",
+                "lessons": [
+                    {k: v for k, v in dict(l, id=f"s{i:02d}", changedAt=0).items() if k != "task"}
+                    for i, l in enumerate(lessons)
+                ],
+                "updatedAt": 0,
+            }
+        },
+        "changes": [],
+    }
+    (HERE / "seed.json").write_text(json.dumps(seed, ensure_ascii=False, indent=1), encoding="utf-8")
+    admin = (HERE / "admin_template.html").read_text(encoding="utf-8").replace(
+        "/*__SEED__*/null", json.dumps(seed, ensure_ascii=False)
+    )
+    (HERE / "kabinet.html").write_text(admin, encoding="utf-8")
+    (HERE / "admin.html").write_text(
+        '<!doctype html>\n<html lang="uk">\n<head>\n<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        "</head>\n<body>\n" + admin + "\n</body>\n</html>\n",
+        encoding="utf-8",
+    )
+    print(f"kabinet.html / admin.html: {len(seed['groups']['ZIPZ-26-1']['lessons'])} пар у стартових даних")
+
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,865 @@
+<title>Портал розкладу УУ</title>
+<style>
+/* Layout: та сама рамка Moodle Boost, що й у студентській сторінці; перемикач «Методист / Студент» у навбарі, сітка тижня групи + бічна панель редагування. */
+:root {
+  --bg: #f2f4f7;
+  --surface: #ffffff;
+  --sunk: #f7f8fa;
+  --line: #dee2e6;
+  --fg: #1d2125;
+  --muted: #5d6874;
+  --accent: #0f6cbf;
+  --accent-soft: #e7f0fa;
+  --now: #0b7a53;
+  --now-soft: #e3f4ec;
+  --warn: #9a5b00;
+  --warn-soft: #fff4dc;
+  --bad: #b3261e;
+  --bad-soft: #fde8e6;
+  --yellow: #f2c200;
+  --yellow-soft: #fff8d6;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15191e; --surface: #1e242b; --sunk: #191e24; --line: #333c46; --fg: #e6e9ec; --muted: #9aa5b1;
+    --accent: #6cb1ff; --accent-soft: #1d3149; --now: #4fd1a0; --now-soft: #173a2e;
+    --warn: #f0b860; --warn-soft: #3a2e17; --bad: #ff8a80; --bad-soft: #3d1d1b;
+    --yellow: #d9ae00; --yellow-soft: #332b0c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15191e; --surface: #1e242b; --sunk: #191e24; --line: #333c46; --fg: #e6e9ec; --muted: #9aa5b1;
+  --accent: #6cb1ff; --accent-soft: #1d3149; --now: #4fd1a0; --now-soft: #173a2e;
+  --warn: #f0b860; --warn-soft: #3a2e17; --bad: #ff8a80; --bad-soft: #3d1d1b;
+  --yellow: #d9ae00; --yellow-soft: #332b0c; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--font); }
+a { color: var(--accent); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.navbar { background: var(--surface); border-bottom: 1px solid var(--line); padding: 10px 16px; display: flex; align-items: center; gap: 12px 16px; flex-wrap: wrap; }
+.brand { font-weight: 700; }
+.modes { display: flex; gap: 4px; background: var(--sunk); border: 1px solid var(--line); border-radius: 6px; padding: 3px; }
+.modes button { border: 0; background: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; color: var(--muted); }
+.modes button[aria-pressed="true"] { background: var(--surface); color: var(--accent); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.status { margin-left: auto; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); display: inline-block; }
+.dot.live { background: var(--now); }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 48px; display: grid; gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; min-width: 0; }
+.card > h2 { margin: 0; padding: 14px 20px 0; font-size: 18px; font-weight: 500; }
+.card-body { padding: 12px 20px 20px; }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+.banner { padding: 10px 14px; border-radius: 4px; font-size: 14px; background: var(--warn-soft); color: var(--warn); }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.toolbar label { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+select, input[type="text"] { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 6px 8px; min-width: 0; }
+.btn { border: 1px solid var(--line); background: var(--surface); border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); font-weight: 600; }
+.btn.danger { color: var(--bad); border-color: var(--bad); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.file-btn { position: relative; overflow: hidden; }
+.file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+.admin-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 20px; align-items: start; }
+@media (max-width: 980px) { .admin-grid { grid-template-columns: minmax(0, 1fr); } }
+
+.scroll { overflow-x: auto; }
+table.week { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 13px; }
+.week th, .week td { border: 1px solid var(--line); vertical-align: top; }
+.week thead th { background: var(--sunk); font-weight: 600; padding: 6px; text-align: left; }
+.week th.pair { width: 74px; background: var(--sunk); padding: 6px; font-weight: 600; text-align: left; }
+.week th.pair small { display: block; font-family: var(--mono); font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
+.slot { padding: 4px; min-height: 64px; cursor: pointer; display: grid; gap: 4px; align-content: start; }
+.slot:hover { background: var(--accent-soft); }
+.slot.sel { outline: 2px solid var(--accent); outline-offset: -2px; }
+.slot.clash { background: var(--bad-soft); }
+.chip { display: block; border-radius: 3px; padding: 3px 6px; background: var(--accent-soft); line-height: 1.3; }
+.chip.w2 { background: var(--yellow-soft); border-left: 3px solid var(--yellow); }
+.chip.w1 { border-left: 3px solid var(--line); }
+.chip b { font-weight: 600; display: block; }
+.chip span { color: var(--muted); }
+.chip .flag { color: var(--bad); font-weight: 600; }
+.plus { color: var(--muted); font-size: 12px; }
+
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--muted); margin-top: 10px; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -2px; margin-right: 4px; background: var(--accent-soft); }
+.legend i.w2 { background: var(--yellow-soft); border-left: 3px solid var(--yellow); }
+.legend i.bad { background: var(--bad-soft); }
+
+.editor { display: grid; gap: 12px; }
+.editor h3 { margin: 0; font-size: 15px; }
+.field { display: grid; gap: 4px; }
+.field label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.list { display: grid; gap: 6px; }
+.list button.item { text-align: left; border: 1px solid var(--line); background: var(--sunk); border-radius: 4px; padding: 6px 8px; cursor: pointer; }
+.list button.item[aria-current="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.problems { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: 13px; }
+.problems li { padding: 6px 8px; border-radius: 4px; background: var(--bad-soft); color: var(--bad); }
+.log { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: 13px; }
+.log li { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 8px; }
+.log time { color: var(--muted); font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 12px; }
+
+.preview { max-height: 280px; overflow: auto; border: 1px solid var(--line); border-radius: 4px; }
+.preview table { border-collapse: collapse; width: 100%; font-size: 12px; }
+.preview td, .preview th { border-bottom: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+
+/* Студентський вигляд */
+.student { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; align-items: start; }
+@media (max-width: 900px) { .student { grid-template-columns: minmax(0, 1fr); } }
+.weekline { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; color: var(--muted); font-size: 14px; }
+.weekchip { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--fg); }
+.weekchip i { width: 12px; height: 12px; border-radius: 2px; border: 1px solid var(--line); display: inline-block; background: var(--surface); }
+.weekchip i.w2 { background: var(--yellow); border-color: var(--yellow); }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-block: 12px 4px; flex-wrap: wrap; }
+.tabs button { background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 12px; color: var(--muted); cursor: pointer; font-size: 14px; }
+.tabs button[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.day { padding-block: 12px; border-bottom: 1px solid var(--line); }
+.day:last-child { border-bottom: 0; }
+.day h3 { margin: 0 0 8px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+.day h3 .today { color: var(--now); background: var(--now-soft); text-transform: none; letter-spacing: 0; padding: 1px 8px; border-radius: 3px; }
+.empty { color: var(--muted); font-size: 14px; margin: 0; }
+.lesson { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 4px 14px; padding: 10px 12px; border-radius: 4px; }
+.lesson + .lesson { margin-top: 4px; }
+.lesson.next { background: var(--now-soft); }
+.lesson.past { opacity: .55; }
+.time { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 13px; color: var(--muted); }
+.time b { display: block; color: var(--fg); font-size: 15px; font-weight: 600; }
+.what { min-width: 0; }
+.what .title { font-weight: 600; text-decoration: none; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 13px; color: var(--muted); margin-top: 2px; }
+.kind { font-size: 12px; padding: 1px 7px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); }
+.kind.prac { background: var(--warn-soft); color: var(--warn); }
+.changed { font-size: 12px; font-weight: 700; color: var(--bad); background: var(--bad-soft); padding: 1px 7px; border-radius: 3px; }
+.nowtag { font-size: 12px; font-weight: 700; color: var(--now); }
+@media (prefers-reduced-motion: no-preference) { .slot, .tabs button, .modes button { transition: background .15s, color .15s; } }
+</style>
+
+<nav class="navbar">
+  <span class="brand">Університет «Україна» · Розклад</span>
+  <div class="modes" role="group" aria-label="Режим">
+    <button type="button" id="mode-admin" aria-pressed="true">Методист</button>
+    <button type="button" id="mode-teacher" aria-pressed="false">Викладач</button>
+    <button type="button" id="mode-student" aria-pressed="false">Студент</button>
+  </div>
+  <span class="status"><span class="dot" id="dot"></span><span id="status-text">Підключення…</span></span>
+</nav>
+
+<main class="wrap">
+  <div id="banner" class="banner" hidden></div>
+
+  <!-- ========== КАБІНЕТ МЕТОДИСТА ========== -->
+  <section id="view-admin" class="admin-grid">
+    <div class="card">
+      <h2>Розклад групи</h2>
+      <div class="card-body" style="display:grid;gap:12px">
+        <div class="toolbar">
+          <label for="group">Група <select id="group"></select></label>
+          <label for="weekfilter">Показати <select id="weekfilter">
+            <option value="all">обидва тижні</option>
+            <option value="1">тиждень №1 (білий)</option>
+            <option value="2">тиждень №2 (жовтий)</option>
+          </select></label>
+          <span class="file-btn btn" id="import-btn">Імпорт з Word (.docx)<input type="file" id="import" accept=".docx"></span>
+        </div>
+        <div class="scroll"><table class="week" id="grid"></table></div>
+        <div class="legend">
+          <span><i></i>щотижня</span>
+          <span><i class="w2"></i>лише тиждень №2</span>
+          <span><i style="border-left:3px solid var(--line)"></i>лише тиждень №1</span>
+          <span><i class="bad"></i>накладка</span>
+        </div>
+        <p class="note">Клікніть клітинку, щоб додати або змінити пару. Зміни одразу бачать студенти групи.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;gap:20px">
+      <div class="card">
+        <h2 id="editor-title">Пара</h2>
+        <div class="card-body editor" id="editor">
+          <p class="note">Оберіть клітинку в сітці.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Заявки викладачів</h2>
+        <div class="card-body"><div class="list" id="requests"></div></div>
+      </div>
+      <div class="card">
+        <h2>Перевірка</h2>
+        <div class="card-body"><ul class="problems" id="problems"></ul></div>
+      </div>
+      <div class="card">
+        <h2>Журнал змін</h2>
+        <div class="card-body"><ul class="log" id="log"></ul></div>
+      </div>
+    </div>
+
+    <div class="card" id="import-card" hidden style="grid-column:1/-1">
+      <h2>Імпорт: перевірте, що розпізнано</h2>
+      <div class="card-body" style="display:grid;gap:12px">
+        <p class="note" id="import-summary"></p>
+        <div class="preview"><table id="import-table"></table></div>
+        <div class="toolbar" id="import-groups"></div>
+        <div class="actions">
+          <button type="button" class="btn primary" id="import-apply">Замінити розклад обраних груп</button>
+          <button type="button" class="btn" id="import-cancel">Скасувати</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ВИКЛАДАЧ ========== -->
+  <section id="view-teacher" class="student" hidden>
+    <div class="card">
+      <h2>Мої пари</h2>
+      <div class="card-body" style="display:grid;gap:4px" id="t-lessons"></div>
+    </div>
+    <div style="display:grid;gap:20px">
+      <div class="card">
+        <h2>Профіль</h2>
+        <div class="card-body" style="display:grid;gap:8px">
+          <label for="t-who" class="note">Викладач</label>
+          <select id="t-who"></select>
+          <p class="note">У Moodle викладач визначається з профілю. Тему й посилання Zoom він змінює сам; перенесення й скасування йдуть заявкою методисту — той бачить накладки в усіх групах.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Мої заявки</h2>
+        <div class="card-body"><ul class="log" id="t-requests"></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== СТУДЕНТ ========== -->
+  <section id="view-student" class="student" hidden>
+    <div class="card">
+      <h2>Мій розклад</h2>
+      <div class="card-body">
+        <div class="weekline" id="s-weekline"></div>
+        <div class="tabs" role="tablist">
+          <button role="tab" id="s-today" data-view="today" aria-selected="true">Сьогодні й завтра</button>
+          <button role="tab" id="s-week" data-view="week" aria-selected="false">Цей тиждень</button>
+          <button role="tab" id="s-next" data-view="next" aria-selected="false">Наступний тиждень</button>
+        </div>
+        <div id="s-days"></div>
+      </div>
+    </div>
+    <div style="display:grid;gap:20px">
+      <div class="card">
+        <h2>Профіль</h2>
+        <div class="card-body" style="display:grid;gap:8px">
+          <label for="s-group" class="note">Студент групи</label>
+          <select id="s-group"></select>
+          <p class="note">У Moodle група береться з профілю студента автоматично. Тут перемикач — щоб показати, що кожна група бачить лише своє.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Зміни в розкладі</h2>
+        <div class="card-body"><ul class="log" id="s-log"></ul></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+const SEED = /*__SEED__*/null;          // лише для режиму без спільного сховища (GitHub Pages)
+const DAYS = ["пн", "вт", "ср", "чт", "пт", "сб"];
+const DAY_NAMES = ["Понеділок", "Вівторок", "Середа", "Четвер", "Пʼятниця", "Субота", "Неділя"];
+const KINDS = ["лекція", "практична", "лабораторна", "консультація"];
+const CHANGED_DAYS = 7;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pad = n => String(n).padStart(2, "0");
+const ymd = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const dm = d => `${pad(d.getDate())}.${pad(d.getMonth() + 1)}`;
+const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+const mondayOf = d => addDays(new Date(d.getFullYear(), d.getMonth(), d.getDate()), -((d.getDay() + 6) % 7));
+const newId = () => "l" + Math.random().toString(36).slice(2, 10);
+
+// ---------- Стан ----------
+const state = {
+  config: null,          // {semester, bells, weeks, courses, groups:[{id,name}]}
+  groups: {},            // id -> {name, lessons:[...], updatedAt}
+  changes: [],           // [{group, at, text}]
+  requests: [],          // заявки викладачів: {id, group, lessonId, type, to, reason, teacher, status, at}
+  teacher: null,
+  canWrite: false,
+  mode: "admin",
+  group: null,
+  studentGroup: null,
+  sel: null,             // {day, pair}
+  editing: null,         // lesson id або "new"
+  weekFilter: "all",
+  sView: "today",
+  imported: null,
+};
+
+// ---------- Сховище: спільне (db) або локальне (вкладки одного браузера) ----------
+const store = {
+  kind: "none",
+  async init() {
+    const db = window.claude?.use ? await window.claude.use("db") : null;
+    if (db) {
+      this.kind = "db"; this.db = db;
+      const user = await window.claude.use("user");
+      const can = user ? await user.can("data.write") : null;
+      state.canWrite = can !== false;
+      db.doc("config/main").onSnapshot(s => { state.config = s.exists ? s.data() : null; onData(); }, onDbError);
+      db.collection("groups").onSnapshot(s => {
+        const g = {}; s.docs.forEach(d => { g[d.id] = d.data(); }); state.groups = g; onData();
+      }, onDbError);
+      db.collection("changes").orderBy("at", "desc").limit(40).onSnapshot(s => {
+        state.changes = s.docs.map(d => d.data()); onData();
+      }, onDbError);
+      db.collection("requests").orderBy("at", "desc").limit(60).onSnapshot(s => {
+        state.requests = s.docs.map(d => ({ ...d.data(), id: d.id })); onData();
+      }, onDbError);
+      setStatus(true, "Спільний розклад: зміни бачать усі одразу");
+    } else if (SEED) {
+      this.kind = "local";
+      state.canWrite = true;
+      this.load();
+      window.addEventListener("storage", e => { if (e.key === "uu-rozklad-demo") { this.load(); onData(); } });
+      setStatus(true, "Демо: відкрийте другу вкладку — зміни зʼявляться і там");
+      onData();
+    } else {
+      setStatus(false, "Сховище недоступне");
+      showBanner("Розклад зберігається у спільному сховищі, яке відкривається лише після входу. Увійдіть і перезавантажте сторінку.");
+    }
+  },
+  load() {
+    let saved = null;
+    try { saved = JSON.parse(localStorage.getItem("uu-rozklad-demo") || "null"); } catch (e) {}
+    const base = saved || SEED;
+    state.config = base.config; state.groups = base.groups; state.changes = base.changes || []; state.requests = base.requests || [];
+  },
+  saveLocal() {
+    try { localStorage.setItem("uu-rozklad-demo", JSON.stringify({ config: state.config, groups: state.groups, changes: state.changes, requests: state.requests })); } catch (e) {}
+  },
+  async putRequest(req) {
+    if (this.kind === "db") { const { id, ...body } = req; await this.db.doc("requests/" + id).set(body); }
+    else { state.requests = [req, ...state.requests.filter(r => r.id !== req.id)].slice(0, 60); this.saveLocal(); onData(); }
+  },
+  async putGroup(id, body, text) {
+    const change = { group: id, at: Date.now(), text };
+    if (this.kind === "db") {
+      await this.db.doc("groups/" + id).set(body);
+      await this.db.collection("changes").add(change);
+    } else {
+      state.groups[id] = body;
+      state.changes = [change, ...state.changes].slice(0, 40);
+      this.saveLocal(); onData();
+    }
+  },
+};
+
+function onDbError(e) {
+  if (e && e.code === "revoked") { setStatus(false, "Доступ змінено"); return; }
+  setStatus(false, "Звʼязок зі сховищем втрачено — перезавантажте сторінку");
+}
+function setStatus(live, text) { $("dot").className = "dot" + (live ? " live" : ""); $("status-text").textContent = text; }
+function showBanner(text) { const b = $("banner"); b.textContent = text; b.hidden = !text; }
+
+// ---------- Тижні й дзвінки ----------
+function weekNo(d) {
+  const k = ymd(d);
+  const p = (state.config?.weeks || []).find(w => w.start <= k && k <= w.end);
+  return p ? p.week : null;
+}
+function inSemester(d) { const s = state.config?.semester; const k = ymd(d); return !!s && s.starts <= k && k <= s.ends; }
+function bell(pair) { const [s, e] = String(state.config?.bells?.[pair] || "").split("-"); return { s: (s || "").trim(), e: (e || "").trim() }; }
+function atTime(d, hm) { const [h, m] = hm.split(":").map(Number); const x = new Date(d); x.setHours(h || 0, m || 0, 0, 0); return x; }
+const pairs = () => Object.keys(state.config?.bells || {}).map(Number).sort((a, b) => a - b);
+const overlap = (a, b) => a == null || b == null || a === b;
+const groupList = () => state.config?.groups || [];
+const groupName = id => groupList().find(g => g.id === id)?.name || id;
+// Назви в розкладі й у Moodle розходяться дрібницями («, цивільний захист» / «та цивільний захист»),
+// тому курс шукаємо за нормалізованою назвою.
+const normName = s => String(s || "").toLowerCase().replace(/[^a-zа-яіїєґ0-9]+/g, " ").replace(/(^| )(та|і|й|and)(?= |$)/g, " ").replace(/\s+/g, " ").trim();
+function courseFor(name) {
+  const c = state.config?.courses || {};
+  if (c[name] != null) return c[name];
+  const n = normName(name);
+  const hit = Object.keys(c).find(k => normName(k) === n);
+  return hit ? c[hit] : null;
+}
+
+// ---------- Перевірка накладок ----------
+function problems() {
+  const out = [];
+  const flagged = new Set();
+  for (const g of groupList()) {
+    const ls = state.groups[g.id]?.lessons || [];
+    for (let i = 0; i < ls.length; i++) for (let j = i + 1; j < ls.length; j++) {
+      const a = ls[i], b = ls[j];
+      if (a.day === b.day && a.pair === b.pair && overlap(a.week, b.week)) {
+        flagged.add(a.id); flagged.add(b.id);
+        out.push(`${g.name}: ${DAY_NAMES[DAYS.indexOf(a.day)]}, ${a.pair} пара — одночасно «${a.discipline}» і «${b.discipline}»${a.week == null || b.week == null ? "" : ` (тиждень №${a.week})`}`);
+      }
+    }
+  }
+  // Викладач у двох різних групах одночасно з різними дисциплінами.
+  const all = groupList().flatMap(g => (state.groups[g.id]?.lessons || []).map(l => ({ ...l, g })));
+  for (let i = 0; i < all.length; i++) for (let j = i + 1; j < all.length; j++) {
+    const a = all[i], b = all[j];
+    if (a.g.id !== b.g.id && a.teacher && a.teacher === b.teacher && a.day === b.day && a.pair === b.pair
+        && overlap(a.week, b.week) && a.discipline !== b.discipline) {
+      flagged.add(a.id); flagged.add(b.id);
+      out.push(`${a.teacher}: ${DAY_NAMES[DAYS.indexOf(a.day)]}, ${a.pair} пара — у ${a.g.name} і ${b.g.name} різні дисципліни`);
+    }
+  }
+  return { list: out, flagged };
+}
+
+// ---------- Кабінет методиста ----------
+function renderAdmin() {
+  const groups = groupList();
+  const gSel = $("group");
+  gSel.innerHTML = groups.map(g => `<option value="${esc(g.id)}">${esc(g.name)}</option>`).join("");
+  if (!state.group || !groups.some(g => g.id === state.group)) state.group = groups[0]?.id || null;
+  gSel.value = state.group || "";
+  $("import-btn").hidden = !state.canWrite;
+
+  const { list, flagged } = problems();
+  const ls = state.groups[state.group]?.lessons || [];
+  const wf = state.weekFilter;
+  const head = `<thead><tr><th class="pair">Пара</th>${DAYS.map(d => `<th>${DAY_NAMES[DAYS.indexOf(d)]}</th>`).join("")}</tr></thead>`;
+  const body = pairs().map(p => {
+    const b = bell(p);
+    const cells = DAYS.map(d => {
+      const here = ls.filter(l => l.day === d && l.pair === p && (wf === "all" || overlap(l.week, Number(wf))));
+      const clash = here.some(l => flagged.has(l.id));
+      const sel = state.sel && state.sel.day === d && state.sel.pair === p;
+      const chips = here.sort((a, c) => (a.week ?? 0) - (c.week ?? 0)).map(l =>
+        `<span class="chip${l.week === 2 ? " w2" : l.week === 1 ? " w1" : ""}"><b>${esc(l.discipline)}</b><span>${esc(l.kind)}${l.teacher ? " · " + esc(l.teacher) : ""}${l.week ? ` · №${l.week}` : ""}</span>${flagged.has(l.id) ? '<span class="flag"> · накладка</span>' : ""}</span>`).join("");
+      return `<td><div class="slot${clash ? " clash" : ""}${sel ? " sel" : ""}" role="button" tabindex="0" data-day="${d}" data-pair="${p}" aria-label="${DAY_NAMES[DAYS.indexOf(d)]}, ${p} пара">${chips || (state.canWrite ? '<span class="plus">+ додати</span>' : "")}</div></td>`;
+    }).join("");
+    return `<tr><th class="pair">${p} пара<small>${b.s}–${b.e}</small></th>${cells}</tr>`;
+  }).join("");
+  $("grid").innerHTML = head + `<tbody>${body}</tbody>`;
+
+  $("problems").innerHTML = list.length
+    ? list.map(t => `<li>${esc(t)}</li>`).join("")
+    : '<li style="background:var(--now-soft);color:var(--now)">Накладок немає</li>';
+
+  $("log").innerHTML = state.changes.filter(c => !state.group || c.group === state.group).slice(0, 12)
+    .map(c => `<li><time>${fmtAt(c.at)}</time><span>${esc(c.text)}</span></li>`).join("") || '<li class="note">Змін ще не було.</li>';
+
+  renderRequests();
+  renderEditor();
+}
+
+function fmtAt(ms) { const d = new Date(ms); return `${dm(d)} ${pad(d.getHours())}:${pad(d.getMinutes())}`; }
+
+function renderEditor() {
+  const ed = $("editor");
+  if (!state.sel) { $("editor-title").textContent = "Пара"; ed.innerHTML = '<p class="note">Оберіть клітинку в сітці.</p>'; return; }
+  const { day, pair } = state.sel;
+  const ls = (state.groups[state.group]?.lessons || []).filter(l => l.day === day && l.pair === pair);
+  $("editor-title").textContent = `${DAY_NAMES[DAYS.indexOf(day)]}, ${pair} пара`;
+  if (!state.editing && ls.length) state.editing = ls[0].id;
+  if (!state.editing && state.canWrite) state.editing = "new";
+  const cur = ls.find(l => l.id === state.editing) || { id: "new", day, pair, week: null, discipline: "", kind: "лекція", teacher: "", online: true };
+
+  const items = ls.map(l => `<button type="button" class="item" data-id="${l.id}" aria-current="${l.id === state.editing}"><b>${esc(l.discipline)}</b> <span class="note">${esc(l.kind)}${l.week ? ` · №${l.week}` : " · щотижня"}</span></button>`).join("");
+  const list = `<div class="list">${items}${state.canWrite ? `<button type="button" class="item" data-id="new" aria-current="${state.editing === "new"}">+ Нова пара в цьому слоті</button>` : ""}</div>`;
+  if (!state.canWrite) { ed.innerHTML = (ls.length ? list : '<p class="note">Пар немає.</p>') + '<p class="note">Режим перегляду: змінювати розклад можуть лише методисти.</p>'; bindList(); return; }
+
+  const disciplines = [...new Set(Object.values(state.groups).flatMap(g => (g.lessons || []).map(l => l.discipline)).concat(Object.keys(state.config?.courses || {})))].sort();
+  const teachers = [...new Set(Object.values(state.groups).flatMap(g => (g.lessons || []).map(l => l.teacher)).filter(Boolean))].sort();
+  ed.innerHTML = `${list}
+    <div class="field"><label for="f-disc">Дисципліна</label><input type="text" id="f-disc" list="dl-disc" value="${esc(cur.discipline)}"></div>
+    <datalist id="dl-disc">${disciplines.map(d => `<option value="${esc(d)}">`).join("")}</datalist>
+    <div class="row2">
+      <div class="field"><label for="f-kind">Тип</label><select id="f-kind">${KINDS.map(k => `<option${k === cur.kind ? " selected" : ""}>${k}</option>`).join("")}</select></div>
+      <div class="field"><label for="f-week">Тиждень</label><select id="f-week">
+        <option value=""${cur.week == null ? " selected" : ""}>щотижня</option>
+        <option value="1"${cur.week === 1 ? " selected" : ""}>№1 (білий)</option>
+        <option value="2"${cur.week === 2 ? " selected" : ""}>№2 (жовтий)</option></select></div>
+    </div>
+    <div class="field"><label for="f-teacher">Викладач</label><input type="text" id="f-teacher" list="dl-teacher" value="${esc(cur.teacher)}"></div>
+    <datalist id="dl-teacher">${teachers.map(t => `<option value="${esc(t)}">`).join("")}</datalist>
+    <div class="row2">
+      <div class="field"><label for="f-day">День</label><select id="f-day">${DAYS.map(d => `<option value="${d}"${d === cur.day ? " selected" : ""}>${DAY_NAMES[DAYS.indexOf(d)]}</option>`).join("")}</select></div>
+      <div class="field"><label for="f-pair">Пара</label><select id="f-pair">${pairs().map(p => `<option value="${p}"${p === cur.pair ? " selected" : ""}>${p} (${bell(p).s})</option>`).join("")}</select></div>
+    </div>
+    <div class="field"><label for="f-online">Формат</label><select id="f-online">
+      <option value="1"${cur.online ? " selected" : ""}>онлайн, Zoom</option>
+      <option value="0"${cur.online ? "" : " selected"}>аудиторія</option></select></div>
+    <div class="actions">
+      <button type="button" class="btn primary" id="f-save">${cur.id === "new" ? "Додати пару" : "Зберегти"}</button>
+      ${cur.id === "new" ? "" : '<button type="button" class="btn danger" id="f-del">Видалити</button>'}
+    </div>
+    <p class="note" id="f-msg"></p>`;
+  bindList();
+  $("f-save").onclick = () => saveLesson(cur);
+  if ($("f-del")) $("f-del").onclick = () => deleteLesson(cur);
+}
+
+function bindList() {
+  $("editor").querySelectorAll("button.item").forEach(b => b.onclick = () => { state.editing = b.dataset.id; renderEditor(); });
+}
+
+function describe(l) { return `«${l.discipline}» (${l.kind}) — ${DAY_NAMES[DAYS.indexOf(l.day)]}, ${l.pair} пара${l.week ? `, тиждень №${l.week}` : ""}`; }
+
+async function saveLesson(cur) {
+  const discipline = $("f-disc").value.trim();
+  if (!discipline) { $("f-msg").textContent = "Вкажіть дисципліну."; return; }
+  const next = {
+    id: cur.id === "new" ? newId() : cur.id,
+    discipline, kind: $("f-kind").value, teacher: $("f-teacher").value.trim(),
+    week: $("f-week").value ? Number($("f-week").value) : null,
+    day: $("f-day").value, pair: Number($("f-pair").value), online: $("f-online").value === "1",
+    course: courseFor(discipline) ?? cur.course ?? null,
+    changedAt: Date.now(),
+  };
+  const g = structuredClone(state.groups[state.group] || { name: groupName(state.group), lessons: [] });
+  const i = g.lessons.findIndex(l => l.id === next.id);
+  let text;
+  if (i < 0) { g.lessons.push(next); text = `Додано ${describe(next)}`; }
+  else {
+    const old = g.lessons[i];
+    const moved = old.day !== next.day || old.pair !== next.pair;
+    text = moved ? `Перенесено «${next.discipline}»: ${DAY_NAMES[DAYS.indexOf(old.day)]}, ${old.pair} пара → ${DAY_NAMES[DAYS.indexOf(next.day)]}, ${next.pair} пара` : `Змінено ${describe(next)}`;
+    g.lessons[i] = next;
+  }
+  g.updatedAt = Date.now();
+  $("f-save").disabled = true;
+  try {
+    await store.putGroup(state.group, g, text);
+    state.sel = { day: next.day, pair: next.pair }; state.editing = next.id;
+  } catch (e) {
+    $("f-msg").textContent = e?.code === "invalid_argument" ? "Немає прав на зміну розкладу." : "Не вдалося зберегти. Спробуйте ще раз.";
+    if (e?.code === "invalid_argument") { state.canWrite = false; }
+  }
+  render();
+}
+
+async function deleteLesson(cur) {
+  const g = structuredClone(state.groups[state.group]);
+  g.lessons = g.lessons.filter(l => l.id !== cur.id);
+  g.updatedAt = Date.now();
+  state.editing = null;
+  try { await store.putGroup(state.group, g, `Скасовано ${describe(cur)}`); } catch (e) { showBanner("Не вдалося видалити пару."); }
+  render();
+}
+
+// ---------- Імпорт docx ----------
+// Формат офіційного розкладу: таблиця «Пара | Час | Пн … Сб»; кожна пара — два рядки:
+// верхній — тиждень №1, нижній (заливка ffff00) — №2. Клітинка, обʼєднана на обидва
+// рядки (vMerge), — щотижня. Текст клітинки: «Дисципліна(лекція)Прізвище І.Б.https://…».
+const W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main";
+const ROMAN = { "І": 1, "ІІ": 2, "ІІІ": 3, "ІV": 4, "IV": 4, "V": 5, "VІ": 6, "VI": 6, "VІІ": 7, "VII": 7, "VІІІ": 8 };
+
+function cellText(tc) { return [...tc.getElementsByTagNameNS(W, "t")].map(t => t.textContent).join("").trim(); }
+function vmerge(tc) { const v = tc.getElementsByTagNameNS(W, "vMerge")[0]; return v ? (v.getAttributeNS(W, "val") || v.getAttribute("w:val") || "continue") : null; }
+
+function parseCell(text) {
+  const online = /https?:\/\/|zoom/i.test(text);
+  const clean = text.replace(/https?:\/\/\S+/g, " ").replace(/Meeting ID[^А-ЯІЇЄҐA-Z]*[\d\s]+/gi, " ").replace(/Passcode:?\s*\S+/gi, " ").replace(/\s+/g, " ").trim();
+  const m = clean.match(/^(.*?)\s*\((лекція|практична|лабораторна|консультація)\)\s*(.*)$/i);
+  const discipline = (m ? m[1] : clean).trim();
+  const kind = m ? m[2].toLowerCase() : "лекція";
+  const t = (m ? m[3] : "").match(/[А-ЯІЇЄҐ][а-яіїєґʼ'’\-]+\s+[А-ЯІЇЄҐ]\.\s?[А-ЯІЇЄҐ]\./);
+  return { discipline, kind, teacher: t ? t[0].replace(/\s+/g, " ") : "", online };
+}
+
+async function parseDocx(file) {
+  const zip = await JSZip.loadAsync(file);
+  const xml = new DOMParser().parseFromString(await zip.file("word/document.xml").async("string"), "application/xml");
+  const tables = [...xml.getElementsByTagNameNS(W, "tbl")];
+  const table = tables.find(t => /Понеділок/.test(t.textContent) && /Пара/.test(t.textContent));
+  if (!table) throw new Error("У файлі немає таблиці розкладу (рядка «Пара | Час | Понеділок …»).");
+  const rows = [...table.getElementsByTagNameNS(W, "tr")].filter(r => r.parentNode === table);
+  const header = [...rows[0].getElementsByTagNameNS(W, "tc")].map(cellText);
+  const DAY_HEAD = { "понеділок": 0, "вівторок": 1, "середа": 2, "четвер": 3, "пятниця": 4, "субота": 5 };
+  const dayCols = header.map(h => DAY_HEAD[h.toLowerCase().replace(/['’ʼ`\s]/g, "")] ?? null);
+  const out = [];
+  for (let r = 1; r + 1 < rows.length; r += 2) {
+    const top = [...rows[r].getElementsByTagNameNS(W, "tc")].filter(c => c.parentNode === rows[r]);
+    const bot = [...rows[r + 1].getElementsByTagNameNS(W, "tc")].filter(c => c.parentNode === rows[r + 1]);
+    const pair = ROMAN[cellText(top[0]).replace(/\s/g, "")] || (r + 1) / 2;
+    for (let c = 2; c < top.length; c++) {
+      const dayIdx = dayCols[c]; if (dayIdx == null) continue;
+      const tText = cellText(top[c]);
+      const weekly = vmerge(top[c]) === "restart" && vmerge(bot[c] || top[c]) === "continue";
+      if (tText) out.push({ id: newId(), day: DAYS[dayIdx], pair, week: weekly ? null : 1, ...parseCell(tText) });
+      if (!weekly && bot[c]) { const bText = cellText(bot[c]); if (bText) out.push({ id: newId(), day: DAYS[dayIdx], pair, week: 2, ...parseCell(bText) }); }
+    }
+  }
+  return out;
+}
+
+$("import").addEventListener("change", async e => {
+  const file = e.target.files[0]; e.target.value = "";
+  if (!file) return;
+  try {
+    const lessons = await parseDocx(file);
+    state.imported = lessons.map(l => ({ ...l, course: courseFor(l.discipline) }));
+    $("import-summary").textContent = `Файл «${file.name}»: розпізнано ${lessons.length} пар. Посилання Zoom і коди доступу в розклад не переносяться — лише позначка «онлайн».`;
+    $("import-table").innerHTML = `<tr><th>День</th><th>Пара</th><th>Тиждень</th><th>Дисципліна</th><th>Тип</th><th>Викладач</th></tr>` +
+      state.imported.map(l => `<tr><td>${DAY_NAMES[DAYS.indexOf(l.day)]}</td><td>${l.pair}</td><td>${l.week ? "№" + l.week : "щотижня"}</td><td>${esc(l.discipline)}</td><td>${esc(l.kind)}</td><td>${esc(l.teacher) || '<span class="note">—</span>'}</td></tr>`).join("");
+    $("import-groups").innerHTML = '<span class="note">Застосувати до:</span>' + groupList().map(g => `<label><input type="checkbox" value="${esc(g.id)}"${g.id === state.group ? " checked" : ""}> ${esc(g.name)}</label>`).join("");
+    $("import-card").hidden = false;
+    $("import-card").scrollIntoView({ behavior: "smooth", block: "start" });
+  } catch (err) {
+    showBanner("Не вдалося прочитати файл: " + (err.message || "невідомий формат") + " Потрібен .docx з таблицею розкладу.");
+  }
+});
+$("import-cancel").onclick = () => { state.imported = null; $("import-card").hidden = true; };
+$("import-apply").onclick = async () => {
+  const ids = [...$("import-groups").querySelectorAll("input:checked")].map(i => i.value);
+  if (!ids.length || !state.imported) return;
+  $("import-apply").disabled = true;
+  try {
+    for (const id of ids) {
+      const lessons = state.imported.map(l => ({ ...l, id: newId(), changedAt: Date.now() }));
+      await store.putGroup(id, { name: groupName(id), lessons, updatedAt: Date.now() }, `Імпортовано розклад з Word: ${lessons.length} пар`);
+    }
+    state.imported = null; $("import-card").hidden = true; showBanner("");
+  } catch (e) { showBanner("Імпорт не збережено: немає прав або звʼязку."); }
+  $("import-apply").disabled = false;
+  render();
+};
+
+// ---------- Заявки ----------
+const slotName = (day, pair, week) => `${DAY_NAMES[DAYS.indexOf(day)]}, ${pair} пара${week ? `, тиждень №${week}` : ""}`;
+function findLesson(gid, lid) { return (state.groups[gid]?.lessons || []).find(l => l.id === lid); }
+
+// Що заважає перенести пару в новий слот: інша пара групи або той самий викладач в іншій групі.
+function moveClashes(req) {
+  const l = findLesson(req.group, req.lessonId); if (!l) return ["Пару вже змінено або видалено."];
+  const t = req.to; const out = [];
+  for (const o of state.groups[req.group]?.lessons || []) {
+    if (o.id !== l.id && o.day === t.day && o.pair === t.pair && overlap(o.week, t.week)) out.push(`у групи вже «${o.discipline}»`);
+  }
+  for (const g of groupList()) {
+    if (g.id === req.group) continue;
+    for (const o of state.groups[g.id]?.lessons || []) {
+      if (l.teacher && o.teacher === l.teacher && o.day === t.day && o.pair === t.pair && overlap(o.week, t.week)) out.push(`${l.teacher} у цей час веде ${g.name}`);
+    }
+  }
+  return out;
+}
+
+function renderRequests() {
+  const box = $("requests");
+  const pending = state.requests.filter(r => r.status === "pending");
+  if (!pending.length) { box.innerHTML = '<p class="note">Нових заявок немає.</p>'; return; }
+  box.innerHTML = pending.map(r => {
+    const l = findLesson(r.group, r.lessonId);
+    const what = l ? `«${esc(l.discipline)}», ${esc(groupName(r.group))}: ${esc(slotName(l.day, l.pair, l.week))}` : "пару не знайдено";
+    const ask = r.type === "move" ? `перенести на ${esc(slotName(r.to.day, r.to.pair, r.to.week))}` : "скасувати";
+    const clashes = r.type === "move" ? moveClashes(r) : [];
+    return `<div class="chip" style="display:grid;gap:6px;padding:8px">
+      <span><b>${esc(r.teacher)}</b> просить ${ask}</span>
+      <span>${what}${r.reason ? ` — «${esc(r.reason)}»` : ""}</span>
+      ${clashes.length ? `<span class="flag">Накладка: ${esc(clashes.join("; "))}</span>` : (r.type === "move" ? '<span style="color:var(--now)">Слот вільний</span>' : "")}
+      ${state.canWrite ? `<span class="actions"><button type="button" class="btn primary" data-ok="${r.id}"${clashes.length ? " disabled" : ""}>Підтвердити</button><button type="button" class="btn" data-no="${r.id}">Відхилити</button></span>` : ""}
+    </div>`;
+  }).join("");
+  box.querySelectorAll("[data-ok]").forEach(b => b.onclick = () => decide(b.dataset.ok, true));
+  box.querySelectorAll("[data-no]").forEach(b => b.onclick = () => decide(b.dataset.no, false));
+}
+
+async function decide(id, ok) {
+  const r = state.requests.find(x => x.id === id); if (!r) return;
+  try {
+    if (ok) {
+      const g = structuredClone(state.groups[r.group]);
+      const i = g.lessons.findIndex(l => l.id === r.lessonId);
+      if (i < 0) throw new Error("gone");
+      const l = g.lessons[i];
+      let text;
+      if (r.type === "move") {
+        g.lessons[i] = { ...l, day: r.to.day, pair: r.to.pair, week: r.to.week, changedAt: Date.now() };
+        text = `Перенесено «${l.discipline}» (заявка ${r.teacher}): ${slotName(l.day, l.pair, l.week)} → ${slotName(r.to.day, r.to.pair, r.to.week)}`;
+      } else {
+        g.lessons.splice(i, 1);
+        text = `Скасовано «${l.discipline}», ${slotName(l.day, l.pair, l.week)} (заявка ${r.teacher})`;
+      }
+      g.updatedAt = Date.now();
+      await store.putGroup(r.group, g, text);
+    }
+    await store.putRequest({ ...r, status: ok ? "approved" : "rejected", decidedAt: Date.now() });
+  } catch (e) { showBanner("Заявку не оброблено: пару змінено або немає прав."); }
+  render();
+}
+
+// ---------- Викладач ----------
+function teacherList() {
+  return [...new Set(groupList().flatMap(g => (state.groups[g.id]?.lessons || []).map(l => l.teacher)).filter(Boolean))].sort();
+}
+function renderTeacher() {
+  const list = teacherList();
+  const sel = $("t-who");
+  sel.innerHTML = list.map(t => `<option>${esc(t)}</option>`).join("");
+  if (!state.teacher || !list.includes(state.teacher)) state.teacher = list[0] || null;
+  sel.value = state.teacher || "";
+  const mine = groupList().flatMap(g => (state.groups[g.id]?.lessons || []).filter(l => l.teacher === state.teacher).map(l => ({ l, g })))
+    .sort((a, b) => DAYS.indexOf(a.l.day) - DAYS.indexOf(b.l.day) || a.l.pair - b.l.pair);
+  const box = $("t-lessons");
+  if (!mine.length) { box.innerHTML = '<p class="empty">Пар немає.</p>'; }
+  else box.innerHTML = mine.map(({ l, g }) => {
+    const pend = state.requests.find(r => r.lessonId === l.id && r.status === "pending");
+    const b = bell(l.pair);
+    return `<div class="lesson" style="grid-template-columns:96px minmax(0,1fr)">
+      <div class="time"><b>${DAY_NAMES[DAYS.indexOf(l.day)].slice(0, 2)} ${b.s}</b>${l.pair} пара${l.week ? ` · №${l.week}` : ""}</div>
+      <div class="what" style="display:grid;gap:8px">
+        <div><span class="title">${esc(l.discipline)}</span><div class="meta"><span class="kind${/практ|лаб/.test(l.kind) ? " prac" : ""}">${esc(l.kind)}</span><span>${esc(g.name)}</span>${l.week ? "" : "<span>щотижня</span>"}</div></div>
+        <div class="row2">
+          <div class="field"><label for="tt-${l.id}">Тема заняття</label><input type="text" id="tt-${l.id}" value="${esc(l.topic || "")}" placeholder="напр. Цикли for і while"></div>
+          <div class="field"><label for="tz-${l.id}">Посилання Zoom</label><input type="text" id="tz-${l.id}" value="${esc(l.zoom || "")}" placeholder="https://…zoom.us/j/…"></div>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn primary" data-save="${l.id}" data-g="${g.id}">Зберегти тему й посилання</button>
+          ${pend ? `<span class="note">Заявка на ${pend.type === "move" ? "перенесення" : "скасування"} чекає на методиста</span>` : `<button type="button" class="btn" data-ask="${l.id}" data-g="${g.id}">Перенести або скасувати…</button>`}
+        </div>
+        <div id="ask-${l.id}"></div>
+      </div></div>`;
+  }).join("");
+  box.querySelectorAll("[data-save]").forEach(btn => btn.onclick = () => saveTopic(btn.dataset.g, btn.dataset.save));
+  box.querySelectorAll("[data-ask]").forEach(btn => btn.onclick = () => askForm(btn.dataset.g, btn.dataset.ask));
+  $("t-requests").innerHTML = state.requests.filter(r => r.teacher === state.teacher).slice(0, 10).map(r => {
+    const l = findLesson(r.group, r.lessonId);
+    const st = { pending: "очікує", approved: "підтверджено", rejected: "відхилено" }[r.status];
+    return `<li><time>${fmtAt(r.at)}</time><span>${r.type === "move" ? "Перенесення" : "Скасування"} «${esc(l?.discipline || "—")}» — <b>${st}</b></span></li>`;
+  }).join("") || '<li class="note">Заявок ще не було.</li>';
+}
+
+async function saveTopic(gid, lid) {
+  const topic = $("tt-" + lid).value.trim();
+  const zoom = $("tz-" + lid).value.trim();
+  if (zoom && !/^https:\/\/[\w.-]*zoom\.us\//i.test(zoom)) { showBanner("Посилання Zoom має починатися з https:// і вести на zoom.us."); return; }
+  const g = structuredClone(state.groups[gid]);
+  const l = g.lessons.find(x => x.id === lid); if (!l) return;
+  if ((l.topic || "") === topic && (l.zoom || "") === zoom) return;
+  l.topic = topic; l.zoom = zoom; l.online = l.online || !!zoom; l.changedAt = Date.now();
+  g.updatedAt = Date.now();
+  try {
+    await store.putGroup(gid, g, `${l.teacher}: ${topic ? `тема «${topic}»` : "тему прибрано"}${zoom ? ", оновлено посилання Zoom" : ""} — «${l.discipline}», ${slotName(l.day, l.pair, l.week)}`);
+    showBanner("");
+  } catch (e) { showBanner("Не вдалося зберегти: немає прав або звʼязку."); }
+}
+
+function askForm(gid, lid) {
+  const l = findLesson(gid, lid); if (!l) return;
+  $("ask-" + lid).innerHTML = `<div class="chip" style="display:grid;gap:8px;padding:10px">
+    <div class="row2">
+      <div class="field"><label for="ad-${lid}">Новий день</label><select id="ad-${lid}">${DAYS.map(d => `<option value="${d}"${d === l.day ? " selected" : ""}>${DAY_NAMES[DAYS.indexOf(d)]}</option>`).join("")}</select></div>
+      <div class="field"><label for="ap-${lid}">Пара</label><select id="ap-${lid}">${pairs().map(p => `<option value="${p}"${p === l.pair ? " selected" : ""}>${p} (${bell(p).s})</option>`).join("")}</select></div>
+    </div>
+    <div class="field"><label for="ar-${lid}">Причина</label><input type="text" id="ar-${lid}" placeholder="напр. конференція 15.10"></div>
+    <div class="actions">
+      <button type="button" class="btn primary" id="am-${lid}">Попросити перенести</button>
+      <button type="button" class="btn danger" id="ac-${lid}">Попросити скасувати</button>
+    </div></div>`;
+  const send = async type => {
+    const req = {
+      id: "r" + Math.random().toString(36).slice(2, 10), group: gid, lessonId: lid, type,
+      to: type === "move" ? { day: $("ad-" + lid).value, pair: Number($("ap-" + lid).value), week: l.week ?? null } : null,
+      reason: $("ar-" + lid).value.trim(), teacher: l.teacher, status: "pending", at: Date.now(),
+    };
+    if (type === "move" && req.to.day === l.day && req.to.pair === l.pair) { showBanner("Оберіть інший день або пару."); return; }
+    try { await store.putRequest(req); showBanner(""); } catch (e) { showBanner("Заявку не надіслано: немає прав або звʼязку."); }
+    render();
+  };
+  $("am-" + lid).onclick = () => send("move");
+  $("ac-" + lid).onclick = () => send("cancel");
+}
+
+// ---------- Студент ----------
+function lessonsOn(d, gid) {
+  if (!inSemester(d)) return null;
+  const wn = weekNo(d); const code = DAYS[(d.getDay() + 6) % 7];
+  return (state.groups[gid]?.lessons || []).filter(l => l.day === code && overlap(l.week, wn)).sort((a, b) => a.pair - b.pair);
+}
+function nextKey(now, gid) {
+  for (let i = 0; i < 21; i++) {
+    const d = addDays(new Date(now.getFullYear(), now.getMonth(), now.getDate()), i);
+    for (const l of lessonsOn(d, gid) || []) if (atTime(d, bell(l.pair).e) >= now) return `${ymd(d)}#${l.id}`;
+  }
+  return null;
+}
+function renderStudent() {
+  const groups = groupList();
+  const sg = $("s-group");
+  sg.innerHTML = groups.map(g => `<option value="${esc(g.id)}">${esc(g.name)}</option>`).join("");
+  if (!state.studentGroup || !groups.some(g => g.id === state.studentGroup)) state.studentGroup = groups[0]?.id || null;
+  sg.value = state.studentGroup || "";
+  const gid = state.studentGroup;
+  const now = new Date(); const mon = mondayOf(now); const nk = nextKey(now, gid);
+  const dates = state.sView === "today" ? [now, addDays(now, 1)] : [0, 1, 2, 3, 4, 5].map(i => addDays(mon, (state.sView === "next" ? 7 : 0) + i));
+  const ref = state.sView === "next" ? addDays(mon, 7) : now; const wn = weekNo(ref); const wm = mondayOf(ref);
+  $("s-weekline").innerHTML = (wn ? `<span class="weekchip"><i class="w${wn}"></i>Тиждень №${wn}${wn === 2 ? " (жовтий)" : " (білий)"}</span>` : `<span class="weekchip">Тиждень поза графіком</span>`)
+    + `<span>${dm(wm)}–${dm(addDays(wm, 6))}</span><span>група ${esc(groupName(gid))}</span>`;
+  const fresh = Date.now() - CHANGED_DAYS * 864e5;
+  $("s-days").innerHTML = dates.map(d => {
+    const list = lessonsOn(d, gid); const isToday = ymd(d) === ymd(now);
+    const head = `<h3>${DAY_NAMES[(d.getDay() + 6) % 7]}, ${dm(d)}${isToday ? ' <span class="today">сьогодні</span>' : ""}</h3>`;
+    if (list === null) return `<div class="day">${head}<p class="empty">Поза межами семестру в графіку.</p></div>`;
+    if (!list.length) return `<div class="day">${head}<p class="empty">Пар немає.</p></div>`;
+    return `<div class="day">${head}${list.map(l => {
+      const b = bell(l.pair); const key = `${ymd(d)}#${l.id}`; const past = atTime(d, b.e) < now;
+      const course = l.course ?? courseFor(l.discipline);
+      const title = course ? `<a class="title" href="https://vo.uu.edu.ua/course/view.php?id=${course}" target="_blank" rel="noopener">${esc(l.discipline)}</a>` : `<span class="title">${esc(l.discipline)}</span>`;
+      return `<div class="lesson${key === nk ? " next" : past ? " past" : ""}"><div class="time"><b>${b.s}</b>${b.e} · ${l.pair} пара</div>
+        <div class="what">${title}<div class="meta"><span class="kind${/практ|лаб/.test(l.kind) ? " prac" : ""}">${esc(l.kind)}</span>${l.teacher ? `<span>${esc(l.teacher)}</span>` : ""}${l.zoom && /^https:\/\//.test(l.zoom) ? `<a href="${esc(l.zoom)}" target="_blank" rel="noopener">Підключитися в Zoom</a>` : `<span>${l.online ? "онлайн, Zoom" : "аудиторія"}</span>`}${(l.changedAt || 0) > fresh ? '<span class="changed">змінено</span>' : ""}${key === nk ? `<span class="nowtag">${atTime(d, b.s) <= now ? "іде зараз" : "наступна пара"}</span>` : ""}</div>${l.topic ? `<div class="note" style="margin-top:4px">Тема: ${esc(l.topic)}</div>` : ""}</div></div>`;
+    }).join("")}</div>`;
+  }).join("");
+  document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.view === state.sView)));
+  $("s-log").innerHTML = state.changes.filter(c => c.group === gid).slice(0, 10)
+    .map(c => `<li><time>${fmtAt(c.at)}</time><span>${esc(c.text)}</span></li>`).join("") || '<li class="note">Змін немає.</li>';
+}
+
+// ---------- Загальне ----------
+function render() {
+  for (const m of ["admin", "teacher", "student"]) {
+    $("view-" + m).hidden = state.mode !== m;
+    $("mode-" + m).setAttribute("aria-pressed", String(state.mode === m));
+  }
+  if (!state.config) {
+    if (store.kind === "db") showBanner(state.canWrite ? "Розклад ще не налаштовано: немає даних про семестр і групи." : "Розклад ще не опубліковано.");
+    return;
+  }
+  if (state.mode === "admin") renderAdmin(); else if (state.mode === "teacher") renderTeacher(); else renderStudent();
+}
+let pending = false;
+function onData() {
+  if (pending) return;
+  // Не перемальовувати форму, поки в ній друкують, — інакше чужий запис зітре введений текст.
+  const typing = document.activeElement?.matches?.("#view-teacher input, #editor input");
+  if (typing) { setTimeout(onData, 1500); return; }
+  pending = true; requestAnimationFrame(() => { pending = false; render(); });
+}
+
+for (const m of ["admin", "teacher", "student"]) $("mode-" + m).onclick = () => { state.mode = m; remember(); history.replaceState(null, "", "#" + m); render(); };
+$("t-who").onchange = e => { state.teacher = e.target.value; render(); };
+$("group").onchange = e => { state.group = e.target.value; state.sel = null; state.editing = null; render(); };
+$("weekfilter").onchange = e => { state.weekFilter = e.target.value; render(); };
+$("s-group").onchange = e => { state.studentGroup = e.target.value; remember(); render(); };
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => { state.sView = b.dataset.view; render(); });
+$("grid").addEventListener("click", e => {
+  const s = e.target.closest(".slot"); if (!s) return;
+  state.sel = { day: s.dataset.day, pair: Number(s.dataset.pair) }; state.editing = null; render();
+});
+$("grid").addEventListener("keydown", e => {
+  if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("slot")) { e.preventDefault(); e.target.click(); }
+});
+function remember() { try { localStorage.setItem("uu-rozklad-ui", JSON.stringify({ mode: state.mode, studentGroup: state.studentGroup })); } catch (e) {} }
+try { const ui = JSON.parse(localStorage.getItem("uu-rozklad-ui") || "null"); if (ui) { state.mode = ui.mode || "admin"; state.studentGroup = ui.studentGroup || null; } } catch (e) {}
+if (["#admin", "#teacher", "#student"].includes(location.hash)) state.mode = location.hash.slice(1);
+
+render();
+store.init();
+setInterval(() => { if (state.mode === "student") render(); }, 60000);
+</script>
