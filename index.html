@@ -87,6 +87,8 @@ select, input[type="text"] { background: var(--surface); border: 1px solid #ced4
   linear-gradient(currentColor 0 0) top / 100% 3px no-repeat,
   linear-gradient(currentColor 0 0) center / 100% 3px no-repeat,
   linear-gradient(currentColor 0 0) bottom / 100% 3px no-repeat; }
+/* Артефакт claude.ai додає це правило сам, GitHub Pages — ні: без нього приховані розділи видно. */
+[hidden] { display: none !important; }
 
 /* Layout: кадр vo.uu.edu.ua — смуга, шапка, меню; ліворуч новий блок «Мій розклад», праворуч колонка блоків. */
 .page { margin: 0; padding-inline: 16px; padding-block: 14px 24px; display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 15px; align-items: start; }
@@ -108,7 +110,7 @@ select, input[type="text"] { background: var(--surface); border: 1px solid #ced4
 .day h3 .today { color: var(--now); background: var(--now-soft); text-transform: none; letter-spacing: 0; font-weight: 600; padding: 1px 8px; border-radius: 3px; }
 .empty { color: var(--muted); font-size: 14px; margin: 0; }
 
-.lesson { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 4px 14px; padding: 10px 12px; border-radius: 4px; }
+.lesson { display: grid; grid-template-columns: 118px minmax(0, 1fr); gap: 4px 14px; padding: 10px 12px; border-radius: 4px; }
 .lesson + .lesson { margin-top: 4px; }
 .lesson.next { background: var(--now-soft); }
 .lesson.past { opacity: .55; }
@@ -254,7 +256,7 @@ function renderDay(d, now, nextKey) {
     const tag = key === nextKey ? `<span class="nowtag">${startAt(d, l.pair) <= now ? "іде зараз" : "наступна пара"}</span>` : "";
     const task = l.task ? `<div class="task">Завдання: ${esc(l.task.title)} — <b>до ${esc(String(l.task.due).slice(0, 10))}</b></div>` : "";
     return `<div class="${cls}">
-      <div class="time"><b>${b.s}</b>${b.e} · ${l.pair} пара</div>
+      <div class="time"><b>${b.s}–${b.e}</b>${l.pair} пара</div>
       <div class="what">${title}<div class="meta">${kind}${teacher}${online}${tag}</div>${task}</div>
     </div>`;
   }).join("");

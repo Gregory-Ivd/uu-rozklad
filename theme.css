@@ -76,3 +76,5 @@ select, input[type="text"] { background: var(--surface); border: 1px solid #ced4
   linear-gradient(currentColor 0 0) top / 100% 3px no-repeat,
   linear-gradient(currentColor 0 0) center / 100% 3px no-repeat,
   linear-gradient(currentColor 0 0) bottom / 100% 3px no-repeat; }
+/* Артефакт claude.ai додає це правило сам, GitHub Pages — ні: без нього приховані розділи видно. */
+[hidden] { display: none !important; }

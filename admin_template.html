@@ -74,7 +74,7 @@ table.week { border-collapse: collapse; width: 100%; min-width: 760px; font-size
 .day h3 { margin: 0 0 8px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); display: flex; gap: 8px; align-items: center; }
 .day h3 .today { color: var(--now); background: var(--now-soft); text-transform: none; letter-spacing: 0; padding: 1px 8px; border-radius: 3px; }
 .empty { color: var(--muted); font-size: 14px; margin: 0; }
-.lesson { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 4px 14px; padding: 10px 12px; border-radius: 4px; }
+.lesson { display: grid; grid-template-columns: 118px minmax(0, 1fr); gap: 4px 14px; padding: 10px 12px; border-radius: 4px; }
 .lesson + .lesson { margin-top: 4px; }
 .lesson.next { background: var(--now-soft); }
 .lesson.past { opacity: .55; }
@@ -669,8 +669,8 @@ function renderTeacher() {
   else box.innerHTML = mine.map(({ l, g }) => {
     const pend = state.requests.find(r => r.lessonId === l.id && r.status === "pending");
     const b = bell(l.pair);
-    return `<div class="lesson" style="grid-template-columns:96px minmax(0,1fr)">
-      <div class="time"><b>${DAY_NAMES[DAYS.indexOf(l.day)].slice(0, 2)} ${b.s}</b>${l.pair} пара${l.week ? ` · №${l.week}` : ""}</div>
+    return `<div class="lesson" style="grid-template-columns:118px minmax(0,1fr)">
+      <div class="time"><b>${DAY_NAMES[DAYS.indexOf(l.day)]}</b>${b.s}–${b.e}<br>${l.pair} пара${l.week ? ` · №${l.week}` : ""}</div>
       <div class="what" style="display:grid;gap:8px">
         <div><span class="title">${esc(l.discipline)}</span><div class="meta"><span class="kind${/практ|лаб/.test(l.kind) ? " prac" : ""}">${esc(l.kind)}</span><span>${esc(g.name)}</span>${l.week ? "" : "<span>щотижня</span>"}</div></div>
         <div class="row2">
@@ -769,7 +769,7 @@ function renderStudent() {
       const b = bell(l.pair); const key = `${ymd(d)}#${l.id}`; const past = atTime(d, b.e) < now;
       const course = l.course ?? courseFor(l.discipline);
       const title = course ? `<a class="title" href="https://vo.uu.edu.ua/course/view.php?id=${course}" target="_blank" rel="noopener">${esc(l.discipline)}</a>` : `<span class="title">${esc(l.discipline)}</span>`;
-      return `<div class="lesson${key === nk ? " next" : past ? " past" : ""}"><div class="time"><b>${b.s}</b>${b.e} · ${l.pair} пара</div>
+      return `<div class="lesson${key === nk ? " next" : past ? " past" : ""}"><div class="time"><b>${b.s}–${b.e}</b>${l.pair} пара</div>
         <div class="what">${title}<div class="meta"><span class="kind${/практ|лаб/.test(l.kind) ? " prac" : ""}">${esc(l.kind)}</span>${l.teacher ? `<span>${esc(l.teacher)}</span>` : ""}${l.zoom && /^https:\/\//.test(l.zoom) ? `<a href="${esc(l.zoom)}" target="_blank" rel="noopener">Підключитися в Zoom</a>` : `<span>${l.online ? "онлайн, Zoom" : "аудиторія"}</span>`}${(l.changedAt || 0) > fresh ? '<span class="changed">змінено</span>' : ""}${key === nk ? `<span class="nowtag">${atTime(d, b.s) <= now ? "іде зараз" : "наступна пара"}</span>` : ""}</div>${l.topic ? `<div class="note" style="margin-top:4px">Тема: ${esc(l.topic)}</div>` : ""}</div></div>`;
     }).join("")}</div>`;
   }).join("");
