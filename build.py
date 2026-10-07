@@ -146,6 +146,86 @@ def main() -> None:
     )
     print(f"kabinet.html / admin.html: {len(seed['groups']['ZIPZ-26-1']['lessons'])} пар у стартових даних")
 
+    n = write_ics(data, HERE / ICS_NAME)
+    print(f"{ICS_NAME}: {n} занять на семестр")
+
+
+# --- iCal для штатного «Імпорт календаря» у Moodle -----------------------------
+#
+# Moodle 3.8 вміє підписатися на календар за URL і опитувати його щогодини
+# (Календар → Управління підпискою). Підписка в службовому курсі — і пари
+# з'являються в календарі та «Найближчих подіях» усієї групи без жодного плагіна.
+# UID стабільний (група + дата + пара), тому при оновленні Moodle замінює подію,
+# а не дублює. Час — у UTC: так його однаково читає і Moodle, і будь-який календар.
+# Zoom-посилань і кодів тут теж немає — файл публічний.
+
+ICS_NAME = "rozklad-ZIPZ-26-1.ics"
+DAY_INDEX = {"пн": 0, "вт": 1, "ср": 2, "чт": 3, "пт": 4, "сб": 5, "нд": 6}
+
+
+def _ics_text(value: str) -> str:
+    return value.replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,")
+
+
+def _fold(line: str) -> str:
+    """RFC 5545: рядок не довший за 75 байтів, продовження — з пробілу."""
+    out, cur = [], b""
+    for ch in line:
+        b = ch.encode("utf-8")
+        if len(cur) + len(b) > 74:
+            out.append(cur.decode("utf-8"))
+            cur = b" " + b
+        else:
+            cur += b
+    out.append(cur.decode("utf-8"))
+    return "\r\n".join(out)
+
+
+def write_ics(data: dict, path: Path) -> int:
+    from datetime import datetime, timedelta, timezone
+    from zoneinfo import ZoneInfo
+
+    kyiv = ZoneInfo("Europe/Kyiv")
+    week_of = {}
+    for p in data["weeks"]:
+        d, end = date.fromisoformat(p["start"]), date.fromisoformat(p["end"])
+        while d <= end:
+            week_of[d] = p["week"]
+            d += timedelta(days=1)
+
+    def utc(d: date, hm: str) -> str:
+        local = datetime.combine(d, datetime.strptime(hm, "%H:%M").time(), kyiv)
+        return local.astimezone(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    lines = [
+        "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//uu-rozklad prototype//UK",
+        "CALSCALE:GREGORIAN", _fold(f"X-WR-CALNAME:Розклад {data['group']}"),
+    ]
+    count = 0
+    for d in sorted(week_of):
+        for l in data["lessons"]:
+            if DAY_INDEX.get(l["day"]) != d.weekday() or (l["week"] and l["week"] != week_of[d]):
+                continue
+            start, end = data["bells"][str(l["pair"])].split("-")
+            desc = [_ics_text(x) for x in (l["kind"], l["teacher"]) if x]
+            if l["course"]:
+                desc.append(f"Курс у Moodle: {data['moodle']}/course/view.php?id={l['course']}")
+            lines += [
+                "BEGIN:VEVENT",
+                f"UID:{data['group']}-{d:%Y%m%d}-p{l['pair']}@uu-rozklad",
+                f"DTSTAMP:{stamp}",
+                f"DTSTART:{utc(d, start)}",
+                f"DTEND:{utc(d, end)}",
+                _fold(f"SUMMARY:{l['pair']} пара — {_ics_text(l['discipline'])}"),
+                _fold("DESCRIPTION:" + "\\n".join(desc)),
+                "END:VEVENT",
+            ]
+            count += 1
+    lines.append("END:VCALENDAR")
+    path.write_bytes(("\r\n".join(lines) + "\r\n").encode("utf-8"))
+    return count
+
 
 if __name__ == "__main__":
     main()
