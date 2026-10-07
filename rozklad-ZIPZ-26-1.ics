@@ -5,1500 +5,1282 @@ CALSCALE:GREGORIAN
 X-WR-CALNAME:Розклад ЗІПЗ-26-1
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260902-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260902T070000Z
 DTEND:20260902T082000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260902-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260902T084000Z
 DTEND:20260902T100000Z
-SUMMARY:3 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:3 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260903-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260903T070000Z
 DTEND:20260903T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260903-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260903T084000Z
 DTEND:20260903T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:практична\nКадлубович Т.І.\nКурс у M
- oodle: https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:практична\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260903-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260903T101000Z
 DTEND:20260903T113000Z
 SUMMARY:4 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:практична\nЧорнокозинський К.С.\nК
- урс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:практична\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260903-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260903T114000Z
 DTEND:20260903T130000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260907-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260907T070000Z
 DTEND:20260907T082000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://v
- o.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260907-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260907T084000Z
 DTEND:20260907T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260907-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260907T101000Z
 DTEND:20260907T113000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260907-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260907T114000Z
 DTEND:20260907T130000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260907-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260907T131000Z
 DTEND:20260907T143000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260908-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260908T070000Z
 DTEND:20260908T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260909-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260909T070000Z
 DTEND:20260909T082000Z
-SUMMARY:2 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:2 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260910-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260910T070000Z
 DTEND:20260910T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260910-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260910T114000Z
 DTEND:20260910T130000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260911-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260911T084000Z
 DTEND:20260911T100000Z
 SUMMARY:3 пара — Іноземна мова
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30916
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30916
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260914-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260914T070000Z
 DTEND:20260914T082000Z
-SUMMARY:2 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:2 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260914-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260914T084000Z
 DTEND:20260914T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260914-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260914T101000Z
 DTEND:20260914T113000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260914-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260914T114000Z
 DTEND:20260914T130000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260914-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260914T131000Z
 DTEND:20260914T143000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260915-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260915T070000Z
 DTEND:20260915T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260916-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260916T070000Z
 DTEND:20260916T082000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260916-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260916T084000Z
 DTEND:20260916T100000Z
-SUMMARY:3 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:3 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260917-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260917T070000Z
 DTEND:20260917T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260917-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260917T084000Z
 DTEND:20260917T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:практична\nКадлубович Т.І.\nКурс у M
- oodle: https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:практична\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260917-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260917T101000Z
 DTEND:20260917T113000Z
 SUMMARY:4 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:практична\nЧорнокозинський К.С.\nК
- урс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:практична\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260917-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260917T114000Z
 DTEND:20260917T130000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260921-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260921T070000Z
 DTEND:20260921T082000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://v
- o.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260921-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260921T084000Z
 DTEND:20260921T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260921-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260921T101000Z
 DTEND:20260921T113000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260921-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260921T114000Z
 DTEND:20260921T130000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260921-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260921T131000Z
 DTEND:20260921T143000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260922-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260922T070000Z
 DTEND:20260922T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260923-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260923T070000Z
 DTEND:20260923T082000Z
-SUMMARY:2 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:2 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260924-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260924T070000Z
 DTEND:20260924T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260924-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260924T114000Z
 DTEND:20260924T130000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260925-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260925T084000Z
 DTEND:20260925T100000Z
 SUMMARY:3 пара — Іноземна мова
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30916
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30916
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260928-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260928T070000Z
 DTEND:20260928T082000Z
-SUMMARY:2 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:2 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260928-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260928T084000Z
 DTEND:20260928T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260928-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260928T101000Z
 DTEND:20260928T113000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260928-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260928T114000Z
 DTEND:20260928T130000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260928-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260928T131000Z
 DTEND:20260928T143000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260929-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260929T070000Z
 DTEND:20260929T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260930-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260930T070000Z
 DTEND:20260930T082000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20260930-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20260930T084000Z
 DTEND:20260930T100000Z
-SUMMARY:3 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:3 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261001-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261001T070000Z
 DTEND:20261001T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261001-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261001T084000Z
 DTEND:20261001T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:практична\nКадлубович Т.І.\nКурс у M
- oodle: https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:практична\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261001-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261001T101000Z
 DTEND:20261001T113000Z
 SUMMARY:4 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:практична\nЧорнокозинський К.С.\nК
- урс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:практична\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261001-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261001T114000Z
 DTEND:20261001T130000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261005-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261005T070000Z
 DTEND:20261005T082000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://v
- o.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261005-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261005T084000Z
 DTEND:20261005T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261005-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261005T101000Z
 DTEND:20261005T113000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261005-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261005T114000Z
 DTEND:20261005T130000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261005-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261005T131000Z
 DTEND:20261005T143000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261006-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261006T070000Z
 DTEND:20261006T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261007-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261007T070000Z
 DTEND:20261007T082000Z
-SUMMARY:2 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:2 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261008-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261008T070000Z
 DTEND:20261008T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261008-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261008T114000Z
 DTEND:20261008T130000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261009-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261009T084000Z
 DTEND:20261009T100000Z
 SUMMARY:3 пара — Іноземна мова
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30916
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30916
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261012-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261012T070000Z
 DTEND:20261012T082000Z
-SUMMARY:2 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:2 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261012-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261012T084000Z
 DTEND:20261012T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261012-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261012T101000Z
 DTEND:20261012T113000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261012-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261012T114000Z
 DTEND:20261012T130000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261012-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261012T131000Z
 DTEND:20261012T143000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261013-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261013T070000Z
 DTEND:20261013T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261014-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261014T070000Z
 DTEND:20261014T082000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261014-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261014T084000Z
 DTEND:20261014T100000Z
-SUMMARY:3 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:3 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261015-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261015T070000Z
 DTEND:20261015T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261015-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261015T084000Z
 DTEND:20261015T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:практична\nКадлубович Т.І.\nКурс у M
- oodle: https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:практична\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261015-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261015T101000Z
 DTEND:20261015T113000Z
 SUMMARY:4 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:практична\nЧорнокозинський К.С.\nК
- урс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:практична\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261015-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261015T114000Z
 DTEND:20261015T130000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261019-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261019T070000Z
 DTEND:20261019T082000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://v
- o.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261019-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261019T084000Z
 DTEND:20261019T100000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261019-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261019T101000Z
 DTEND:20261019T113000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261019-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261019T114000Z
 DTEND:20261019T130000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261019-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261019T131000Z
 DTEND:20261019T143000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261020-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261020T070000Z
 DTEND:20261020T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261021-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261021T070000Z
 DTEND:20261021T082000Z
-SUMMARY:2 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:2 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261022-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261022T070000Z
 DTEND:20261022T082000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261022-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261022T114000Z
 DTEND:20261022T130000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261023-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261023T084000Z
 DTEND:20261023T100000Z
 SUMMARY:3 пара — Іноземна мова
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30916
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30916
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261026-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261026T080000Z
 DTEND:20261026T092000Z
-SUMMARY:2 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:2 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261026-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261026T094000Z
 DTEND:20261026T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261026-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261026T111000Z
 DTEND:20261026T123000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261026-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261026T124000Z
 DTEND:20261026T140000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261026-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261026T141000Z
 DTEND:20261026T153000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261027-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261027T080000Z
 DTEND:20261027T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261028-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261028T080000Z
 DTEND:20261028T092000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261028-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261028T094000Z
 DTEND:20261028T110000Z
-SUMMARY:3 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:3 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261029-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261029T080000Z
 DTEND:20261029T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261029-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261029T094000Z
 DTEND:20261029T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:практична\nКадлубович Т.І.\nКурс у M
- oodle: https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:практична\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261029-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261029T111000Z
 DTEND:20261029T123000Z
 SUMMARY:4 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:практична\nЧорнокозинський К.С.\nК
- урс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:практична\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261029-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261029T124000Z
 DTEND:20261029T140000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261102-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261102T080000Z
 DTEND:20261102T092000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://v
- o.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261102-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261102T094000Z
 DTEND:20261102T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261102-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261102T111000Z
 DTEND:20261102T123000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261102-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261102T124000Z
 DTEND:20261102T140000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261102-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261102T141000Z
 DTEND:20261102T153000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261103-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261103T080000Z
 DTEND:20261103T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261104-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261104T080000Z
 DTEND:20261104T092000Z
-SUMMARY:2 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:2 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261105-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261105T080000Z
 DTEND:20261105T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261105-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261105T124000Z
 DTEND:20261105T140000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261106-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261106T094000Z
 DTEND:20261106T110000Z
 SUMMARY:3 пара — Іноземна мова
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30916
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30916
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261109-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261109T080000Z
 DTEND:20261109T092000Z
-SUMMARY:2 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:2 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261109-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261109T094000Z
 DTEND:20261109T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261109-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261109T111000Z
 DTEND:20261109T123000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261109-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261109T124000Z
 DTEND:20261109T140000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261109-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261109T141000Z
 DTEND:20261109T153000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261110-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261110T080000Z
 DTEND:20261110T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261111-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261111T080000Z
 DTEND:20261111T092000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261111-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261111T094000Z
 DTEND:20261111T110000Z
-SUMMARY:3 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:3 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261112-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261112T080000Z
 DTEND:20261112T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261112-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261112T094000Z
 DTEND:20261112T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:практична\nКадлубович Т.І.\nКурс у M
- oodle: https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:практична\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261112-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261112T111000Z
 DTEND:20261112T123000Z
 SUMMARY:4 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:практична\nЧорнокозинський К.С.\nК
- урс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:практична\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261112-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261112T124000Z
 DTEND:20261112T140000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261116-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261116T080000Z
 DTEND:20261116T092000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://v
- o.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261116-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261116T094000Z
 DTEND:20261116T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261116-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261116T111000Z
 DTEND:20261116T123000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261116-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261116T124000Z
 DTEND:20261116T140000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261116-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261116T141000Z
 DTEND:20261116T153000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261117-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261117T080000Z
 DTEND:20261117T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261118-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261118T080000Z
 DTEND:20261118T092000Z
-SUMMARY:2 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:2 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261119-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261119T080000Z
 DTEND:20261119T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261119-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261119T124000Z
 DTEND:20261119T140000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261120-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261120T094000Z
 DTEND:20261120T110000Z
 SUMMARY:3 пара — Іноземна мова
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30916
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30916
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261123-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261123T080000Z
 DTEND:20261123T092000Z
-SUMMARY:2 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:2 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261123-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261123T094000Z
 DTEND:20261123T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261123-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261123T111000Z
 DTEND:20261123T123000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261123-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261123T124000Z
 DTEND:20261123T140000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261123-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261123T141000Z
 DTEND:20261123T153000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261124-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261124T080000Z
 DTEND:20261124T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261125-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261125T080000Z
 DTEND:20261125T092000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261125-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261125T094000Z
 DTEND:20261125T110000Z
-SUMMARY:3 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:3 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261126-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261126T080000Z
 DTEND:20261126T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261126-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261126T094000Z
 DTEND:20261126T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:практична\nКадлубович Т.І.\nКурс у M
- oodle: https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:практична\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261126-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261126T111000Z
 DTEND:20261126T123000Z
 SUMMARY:4 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:практична\nЧорнокозинський К.С.\nК
- урс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:практична\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261126-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261126T124000Z
 DTEND:20261126T140000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261130-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261130T080000Z
 DTEND:20261130T092000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://v
- o.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:лекція\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261130-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261130T094000Z
 DTEND:20261130T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261130-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261130T111000Z
 DTEND:20261130T123000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261130-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261130T124000Z
 DTEND:20261130T140000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261130-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261130T141000Z
 DTEND:20261130T153000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261201-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261201T080000Z
 DTEND:20261201T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261202-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261202T080000Z
 DTEND:20261202T092000Z
-SUMMARY:2 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:2 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:практична\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261203-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261203T080000Z
 DTEND:20261203T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261203-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261203T124000Z
 DTEND:20261203T140000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261204-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261204T094000Z
 DTEND:20261204T110000Z
 SUMMARY:3 пара — Іноземна мова
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30916
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30916
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261207-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261207T080000Z
 DTEND:20261207T092000Z
-SUMMARY:2 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:2 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:лекція\nЯрошовець Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261207-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261207T094000Z
 DTEND:20261207T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:лекція\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261207-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261207T111000Z
 DTEND:20261207T123000Z
-SUMMARY:4 пара — Охорона праці\, безпека житт
- єдіяльності та цивільний захист
-DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https
- ://vo.uu.edu.ua/course/view.php?id=21254
+SUMMARY:4 пара — Охорона праці\, безпека життєдіяльності та цивільний захист
+DESCRIPTION:лекція\nРоманюк О.О.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21254
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261207-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261207T124000Z
 DTEND:20261207T140000Z
 SUMMARY:5 пара — Вища математика
-DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=213
+DESCRIPTION:лекція\nОдрібець Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261207-p6@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261207T141000Z
 DTEND:20261207T153000Z
 SUMMARY:6 пара — Вища математика
-DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/c
- ourse/view.php?id=213
+DESCRIPTION:практична\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=213
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261208-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261208T080000Z
 DTEND:20261208T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: h
- ttps://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:лекція\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261209-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261209T080000Z
 DTEND:20261209T092000Z
 SUMMARY:2 пара — Інформаційні технології
-DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: htt
- ps://vo.uu.edu.ua/course/view.php?id=21498
+DESCRIPTION:практична\nБогун Р.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=21498
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261209-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261209T094000Z
 DTEND:20261209T110000Z
-SUMMARY:3 пара — Українська мова (за професі
- йним спрямуванням)
-DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle:
-  https://vo.uu.edu.ua/course/view.php?id=22024
+SUMMARY:3 пара — Українська мова (за професійним спрямуванням)
+DESCRIPTION:практична\nКалинюк Н.В.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=22024
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261210-p2@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261210T080000Z
 DTEND:20261210T092000Z
 SUMMARY:2 пара — Основи програмування
-DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moo
- dle: https://vo.uu.edu.ua/course/view.php?id=18347
+DESCRIPTION:практична\nВеденєєва О.А.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=18347
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261210-p3@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261210T094000Z
 DTEND:20261210T110000Z
-SUMMARY:3 пара — Основи навчання\, наукового 
- пошуку та академічної доброчесності
-DESCRIPTION:практична\nКадлубович Т.І.\nКурс у M
- oodle: https://vo.uu.edu.ua/course/view.php?id=30426
+SUMMARY:3 пара — Основи навчання\, наукового пошуку та академічної доброчесності
+DESCRIPTION:практична\nКадлубович Т.І.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30426
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261210-p4@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261210T111000Z
 DTEND:20261210T123000Z
 SUMMARY:4 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:практична\nЧорнокозинський К.С.\nК
- урс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:практична\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 BEGIN:VEVENT
 UID:ЗІПЗ-26-1-20261210-p5@uu-rozklad
-DTSTAMP:20261007T184654Z
+DTSTAMP:20261007T195400Z
 DTSTART:20261210T124000Z
 DTEND:20261210T140000Z
 SUMMARY:5 пара — Вступ до спеціальності ІПЗ
-DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс 
- у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
+DESCRIPTION:лекція\nЧорнокозинський К.С.\nКурс у Moodle: https://vo.uu.edu.ua/course/view.php?id=30083
 END:VEVENT
 END:VCALENDAR

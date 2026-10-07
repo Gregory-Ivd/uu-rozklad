@@ -158,6 +158,8 @@ def main() -> None:
 # UID стабільний (група + дата + пара), тому при оновленні Moodle замінює подію,
 # а не дублює. Час — у UTC: так його однаково читає і Moodle, і будь-який календар.
 # Zoom-посилань і кодів тут теж немає — файл публічний.
+# Рядки НЕ переносимо (folding за RFC 5545): парсер Moodle 3.8 на vo.uu.edu.ua
+# не склеює продовження й обрізає назву на місці переносу (перевірено 07.10.2026).
 
 ICS_NAME = "rozklad-ZIPZ-26-1.ics"
 DAY_INDEX = {"пн": 0, "вт": 1, "ср": 2, "чт": 3, "пт": 4, "сб": 5, "нд": 6}
@@ -165,20 +167,6 @@ DAY_INDEX = {"пн": 0, "вт": 1, "ср": 2, "чт": 3, "пт": 4, "сб": 5, "
 
 def _ics_text(value: str) -> str:
     return value.replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,")
-
-
-def _fold(line: str) -> str:
-    """RFC 5545: рядок не довший за 75 байтів, продовження — з пробілу."""
-    out, cur = [], b""
-    for ch in line:
-        b = ch.encode("utf-8")
-        if len(cur) + len(b) > 74:
-            out.append(cur.decode("utf-8"))
-            cur = b" " + b
-        else:
-            cur += b
-    out.append(cur.decode("utf-8"))
-    return "\r\n".join(out)
 
 
 def write_ics(data: dict, path: Path) -> int:
@@ -200,7 +188,7 @@ def write_ics(data: dict, path: Path) -> int:
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     lines = [
         "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//uu-rozklad prototype//UK",
-        "CALSCALE:GREGORIAN", _fold(f"X-WR-CALNAME:Розклад {data['group']}"),
+        "CALSCALE:GREGORIAN", f"X-WR-CALNAME:Розклад {data['group']}",
     ]
     count = 0
     for d in sorted(week_of):
@@ -217,8 +205,8 @@ def write_ics(data: dict, path: Path) -> int:
                 f"DTSTAMP:{stamp}",
                 f"DTSTART:{utc(d, start)}",
                 f"DTEND:{utc(d, end)}",
-                _fold(f"SUMMARY:{l['pair']} пара — {_ics_text(l['discipline'])}"),
-                _fold("DESCRIPTION:" + "\\n".join(desc)),
+                f"SUMMARY:{l['pair']} пара — {_ics_text(l['discipline'])}",
+                "DESCRIPTION:" + "\\n".join(desc),
                 "END:VEVENT",
             ]
             count += 1
