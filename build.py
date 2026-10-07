@@ -149,6 +149,16 @@ def main() -> None:
     n = write_ics(data, HERE / ICS_NAME)
     print(f"{ICS_NAME}: {n} занять на семестр")
 
+    # Особистий варіант із Zoom — лише для імпорту файлом у власний календар Moodle.
+    # Лежить у uni-ipz/data/ (вся папка в .gitignore) і в репозиторій не потрапляє.
+    zoom = {
+        (day, int(item["pair"]), item.get("week"), item["discipline"]): (item.get("zoom") or "", item.get("access") or "")
+        for day, items in (cfg.get("weekly") or {}).items()
+        for item in items or []
+    }
+    n = write_ics(data, PRIVATE_ICS, zoom=zoom)
+    print(f"{PRIVATE_ICS.name}: {n} занять, із Zoom {sum(1 for z in zoom.values() if z[0])} пар у сітці (локально, не публікувати)")
+
 
 # --- iCal для штатного «Імпорт календаря» у Moodle -----------------------------
 #
@@ -162,6 +172,7 @@ def main() -> None:
 # не склеює продовження й обрізає назву на місці переносу (перевірено 07.10.2026).
 
 ICS_NAME = "rozklad-ZIPZ-26-1.ics"
+PRIVATE_ICS = UNI / "data" / "rozklad-ZIPZ-26-1-zoom.ics"
 DAY_INDEX = {"пн": 0, "вт": 1, "ср": 2, "чт": 3, "пт": 4, "сб": 5, "нд": 6}
 
 
@@ -169,7 +180,12 @@ def _ics_text(value: str) -> str:
     return value.replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,")
 
 
-def write_ics(data: dict, path: Path) -> int:
+def write_ics(data: dict, path: Path, zoom: dict | None = None) -> int:
+    """zoom — {(день, пара, тиждень, дисципліна): (посилання, доступ)}; None — публічний файл без Zoom.
+
+    В особистому файлі свій суфікс UID: якщо колись обидва календарі будуть
+    підключені одночасно, Moodle не сплутає їхні події між собою.
+    """
     from datetime import datetime, timedelta, timezone
     from zoneinfo import ZoneInfo
 
@@ -199,9 +215,16 @@ def write_ics(data: dict, path: Path) -> int:
             desc = [_ics_text(x) for x in (l["kind"], l["teacher"]) if x]
             if l["course"]:
                 desc.append(f"Курс у Moodle: {data['moodle']}/course/view.php?id={l['course']}")
+            if zoom:
+                url, access = zoom.get((l["day"], l["pair"], l["week"], l["discipline"]), ("", ""))
+                if url:
+                    desc.append(f"Zoom: {url}")
+                if access:
+                    desc.append(_ics_text(" ".join(access.split())))
+            uid = f"{data['group']}-{d:%Y%m%d}-p{l['pair']}" + ("-zoom" if zoom else "")
             lines += [
                 "BEGIN:VEVENT",
-                f"UID:{data['group']}-{d:%Y%m%d}-p{l['pair']}@uu-rozklad",
+                f"UID:{uid}@uu-rozklad",
                 f"DTSTAMP:{stamp}",
                 f"DTSTART:{utc(d, start)}",
                 f"DTEND:{utc(d, end)}",
